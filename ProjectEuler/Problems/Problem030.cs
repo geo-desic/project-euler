@@ -1,0 +1,50 @@
+﻿namespace ProjectEuler.Problems
+{
+    public class Problem030 : Problem<long>
+    {
+        protected override long CalculateAnswer()
+        {
+            var max = 5L * 9L * 9L * 9L * 9L * 9L; // 9^5 + 9^5 + 9^5 + 9^5 + 9^5 = 295245
+            var maxDigits = 9;
+            var digits = new int[maxDigits];
+
+            var answer = 0;
+            WriteLineDetail("Incremental Results:");
+            for (var i = 2; i <= max; ++i)
+            {
+                Digits(i, digits);
+                if (i == SumOfFifthPowers(digits))
+                {
+                    answer += i;
+                    WriteLineDetail(i);
+                }
+            }
+            return answer;
+        }
+
+        private void Digits(int n, int[] digits)
+        {
+            int d;
+            for (var i = 0; i < digits.Length; ++i)
+            {
+                d = 0;
+                if (n > 0)
+                {
+                    d = n % 10;
+                    n /= 10;
+                }
+                digits[i] = d;
+            }
+        }
+
+        private int SumOfFifthPowers(int[] digits)
+        {
+            var result = 0;
+            foreach (var d in digits)
+            {
+                result += d * d * d * d * d;
+            }
+            return result;
+        }
+    }
+}
