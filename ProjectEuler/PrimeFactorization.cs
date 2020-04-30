@@ -3,6 +3,10 @@ using System.Text;
 
 namespace ProjectEuler
 {
+    /// <summary>
+    /// Represents the prime factorization for an integer.
+    /// <example>For example, 2^2 * 3 * 5 is the prime factorization for the integer 60.</example>
+    /// </summary>
     public class PrimeFactorization
     {
         public PrimeFactorization()
@@ -11,10 +15,14 @@ namespace ProjectEuler
             entriesList = new List<PrimeFactorizationEntry>();
         }
 
-        private Dictionary<long, PrimeFactorizationEntry> entriesDictionary;
+        private readonly Dictionary<long, PrimeFactorizationEntry> entriesDictionary;
 
-        private List<PrimeFactorizationEntry> entriesList;
+        private readonly List<PrimeFactorizationEntry> entriesList;
 
+        /// <summary>
+        /// The prime entries in the prime factorization.
+        /// <example>For example, the prime factorization for 60 would have three entries: 2^2, 3, and 5.</example>
+        /// </summary>
         public IReadOnlyList<PrimeFactorizationEntry> Entries
         {
             get
@@ -23,6 +31,9 @@ namespace ProjectEuler
             }
         }
 
+        /// <summary>
+        /// Adds an entry to this factorization object.
+        /// </summary>
         public void AddEntry(long prime, int power)
         {
             if (entriesDictionary.TryGetValue(prime, out PrimeFactorizationEntry entry))
@@ -37,6 +48,10 @@ namespace ProjectEuler
             }
         }
 
+        /// <summary>
+        /// Returns the entry of this factorization object containing the prime provided.
+        /// <example>For example, if this object is the prime factorization of 60 = 2^2 * 3 * 5, given input 2 it would return the 2^2 entry.</example>
+        /// </summary>
         public PrimeFactorizationEntry Entry(long prime)
         {
             if (entriesDictionary.TryGetValue(prime, out PrimeFactorizationEntry entry))
@@ -46,6 +61,10 @@ namespace ProjectEuler
             return null;
         }
 
+        /// <summary>
+        /// Calculates the product of the prime factorization.
+        /// <example>For example, the factorization 2^2 * 3 * 5 returns 60.</example>
+        /// </summary>
         public long ComputeProduct()
         {
             var result = 1L;
@@ -59,6 +78,9 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Returns a copy of this prime factorization object.
+        /// </summary>
         public PrimeFactorization Copy()
         {
             var result = new PrimeFactorization();
@@ -69,6 +91,9 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Returns true if this factorization is equivalent to the other factorization provided, false otherwise.
+        /// </summary>
         public bool Equals(PrimeFactorization other)
         {
             if (other != null)
@@ -77,7 +102,7 @@ namespace ProjectEuler
                 {
                     if (!entry1.Equals(other.Entry(entry1.Prime))) return false;
                 }
-                foreach (var entry2 in other.Entries)
+                foreach (var entry2 in other.entriesList)
                 {
                     if (!entry2.Equals(Entry(entry2.Prime))) return false;
                 }
@@ -86,6 +111,10 @@ namespace ProjectEuler
             return false;
         }
 
+        /// <summary>
+        /// Returns a string representation of the factorization.
+        /// <example>For example, the prime factorization of 60 returns '2^2 * 3 * 5'.</example>
+        /// </summary>
         public override string ToString()
         {
             var builder = new StringBuilder();

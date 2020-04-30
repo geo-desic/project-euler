@@ -4,6 +4,10 @@ namespace ProjectEuler
 {
     public static class MathHelpers
     {
+        /// <summary>
+        /// Constructs a boolean array where each positive entry > 1 will be true of the integer index is a composite number, false otherwise.
+        /// </summary>
+        /// <param name="n">Upper bound for the sieve.</param>
         public static bool[] IndexCompositeBySieve(long n)
         {
             var composite = new bool[n + 1];
@@ -17,6 +21,10 @@ namespace ProjectEuler
             return composite;
         }
 
+        /// <summary>
+        /// Constructs a list of all positive primes less than or equal to the integer provided.
+        /// </summary>
+        /// <param name="n">The upper bound for prime list.</param>
         public static List<long> PrimesLessOrEqualTo(long n)
         {
             var composite = IndexCompositeBySieve(n);
@@ -29,6 +37,11 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Constructs a prime factorization of the integer provided.
+        /// <example>For example, 60 = 2^2 * 3 * 5.</example>
+        /// </summary>
+        /// <param name="n">The integer for which a prime factorization will be constructed.</param>
         public static PrimeFactorization PrimeFactorization(long n)
         {
             var result = new PrimeFactorization();
@@ -60,6 +73,11 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Calculates the sum of all positive primes less than or equal to the integer provided.
+        /// <example>For example, 8 returns 17 = 2 + 3 + 5 + 7.</example>
+        /// </summary>
+        /// <param name="n">Upper bound for prime summation.</param>
         public static long SumPrimesLessOrEqualTo(long n)
         {
             var composite = IndexCompositeBySieve(n);
@@ -72,6 +90,11 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Calcuates the nth triangular number (see https://en.wikipedia.org/wiki/Triangular_number).
+        /// <example>For example, 6 returns 21.</example>
+        /// </summary>
+        /// <param name="n">The index of the triangular number to calculate.</param>
         public static long NthTriangularNumber(int n)
         {
             long i = n;
@@ -80,6 +103,7 @@ namespace ProjectEuler
 
         /// <summary>
         /// Calculates the number of positive divisors of the integer provided.
+        /// <example>For example, 18 returns 6 since it has divisors: 1, 2, 3, 6, 9, and 18.</example>
         /// </summary>
         /// <param name="n">The integer to count divisors for.</param>
         /// <returns>The total number of positive divisors of the integer n.</returns>
@@ -96,6 +120,7 @@ namespace ProjectEuler
 
         /// <summary>
         /// Calculates all positive divisors of the integer provided.
+        /// <example>For example, 18 returns IEnumerable<1, 2, 3, 6, 9, 18>.</example>
         /// </summary>
         /// <param name="n">The integer to calculate divisors for.</param>
         /// <param name="proper">If true, the integer n will be excluded.</param>
@@ -223,6 +248,10 @@ namespace ProjectEuler
             return result;
         }
 
+        /// <summary>
+        /// Calculates the Collatz function for the integer provided (see https://en.wikipedia.org/wiki/Collatz_conjecture).
+        /// </summary>
+        /// <param name="n">The input for the Collatz function.</param>
         public static long CollatzFunction(long n)
         {
             if (n % 2L == 0L) return n / 2L;

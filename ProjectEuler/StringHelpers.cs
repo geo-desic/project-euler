@@ -12,6 +12,9 @@ namespace ProjectEuler
         private const string INT_WORDS_NEGATIVE = "negative";
         private static readonly string[] INT_WORDS_SUFFIX_POWERS_1000 = { "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion" };
 
+        /// <summary>
+        /// Returns the index of the string's first character not equal to the character provided.
+        /// </summary>
         public static int IndexFirstCharNotEqualTo(this string value, char charValue, int startIndex = 0)
         {
             for (var i = startIndex; i < value.Length; ++i)
@@ -21,6 +24,10 @@ namespace ProjectEuler
             return -1;
         }
 
+        /// <summary>
+        /// Reverses the string provided.
+        /// <example>For example, "ADBC" returns "CBDA".</example>
+        /// </summary>
         public static string Reverse(this string value)
         {
             var charArray = value.ToCharArray();
@@ -28,6 +35,9 @@ namespace ProjectEuler
             return new string(charArray);
         }
 
+        /// <summary>
+        /// Returns the string's rightmost characters of the length provided.
+        /// </summary>
         public static string Right(this string value, int length)
         {
             if (length < 0) throw new ArgumentOutOfRangeException("length");
@@ -36,6 +46,9 @@ namespace ProjectEuler
             return value.Substring(value.Length - length);
         }
 
+        /// <summary>
+        /// Returns the string's leftmost characters of the length provided.
+        /// </summary>
         public static string Left(this string value, int length)
         {
             if (length < 0) throw new ArgumentOutOfRangeException("length");
@@ -44,6 +57,10 @@ namespace ProjectEuler
             return value.Substring(0, length);
         }
 
+        /// <summary>
+        /// Constructs a string representation of the integer in words.
+        /// <example>For example, 237 returns "two hundred and thirty seven".</example>
+        /// </summary>
         public static string IntegerStringToWords(this string integer, bool includeAnd = true)
         {
             if (integer.Length == 0) return null;
