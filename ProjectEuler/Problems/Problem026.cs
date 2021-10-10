@@ -17,14 +17,14 @@ namespace ProjectEuler.Problems
                 {
                     answer = d;
                     longestCycleLength = cycleLength;
-                    WriteLineDetail("d = " + d + "; cycle length = " + cycleLength);
+                    WriteLineDetail($"d = {d}; cycle length = {cycleLength}");
                 }
             }
 
             return answer;
         }
 
-        private int MinPower10MultipleOfRGreaterThanD(int d, int r)
+        private static int MinPower10MultipleOfRGreaterThanD(int d, int r)
         {
             var a = r;
             while (d > a)
@@ -34,7 +34,7 @@ namespace ProjectEuler.Problems
             return a;
         }
 
-        private int CycleLength(int d)
+        private static int CycleLength(int d)
         {
             var result = 0;
             var r = 1;

@@ -17,7 +17,7 @@ class Problem021(Problem):
       sum_2 = self.sum_proper_divisors(sum_1, primes)
       if i == sum_2 and i != sum_1:
         answer += i
-        self.print_detail("amicable number: " + str(i) + " (" + str(sum_1) + "); sum = " + str(answer))
+        self.print_detail(f"amicable number: {i} ({sum_1}); sum = {answer}")
 
     return answer
 

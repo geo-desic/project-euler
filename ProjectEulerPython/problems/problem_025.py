@@ -16,7 +16,7 @@ class Problem025(Problem):
       if digit_count == total_digits:
         break
       elif digit_count >= detail_threshold:
-        self.print_detail("index = " + str(answer) + "; length = " + str(digit_count))
+        self.print_detail(f"index = {answer}; length = {digit_count}")
         detail_threshold += detail_size
       a = b
       b = c

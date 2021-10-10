@@ -38,6 +38,6 @@ class Problem027(Problem):
             a = a_current
             b = b_inc
             max_length = length
-            self.print_detail("length = " + str(length) + "; a = " + str(a) + "; b = " + str(b))
+            self.print_detail(f"length = {length}; a = {a}; b = {b}")
 
     return a * b

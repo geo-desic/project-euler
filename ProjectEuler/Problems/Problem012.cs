@@ -15,7 +15,7 @@
                 var divisors = MathHelpers.DivisorCount(triangularNumber);
                 if (divisors > maxDivisors)
                 {
-                    WriteLineDetail("Triangular #" + i + " = " + triangularNumber + "; Divisor Count = " + divisors);
+                    WriteLineDetail($"Triangular #{i} = {triangularNumber}; Divisor Count = {divisors}");
                     maxDivisors = divisors;
                     answer = triangularNumber;
                 }

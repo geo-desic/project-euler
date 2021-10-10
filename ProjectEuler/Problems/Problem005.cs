@@ -19,7 +19,7 @@
                         if (item.Power > lcmEntry.Power) lcmEntry.Power = item.Power;
                     }
                 }
-                WriteLineDetail(i + ": " + lcmFactorization.ComputeProduct());
+                WriteLineDetail($"{i}: {lcmFactorization.ComputeProduct()}");
             }
 
             return lcmFactorization.ComputeProduct();

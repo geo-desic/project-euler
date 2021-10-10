@@ -17,7 +17,7 @@ namespace ProjectEuler.Problems
                     var date = new DateTime(year, month, 1);
                     if (date.DayOfWeek == DayOfWeek.Sunday) ++yearTotal;
                 }
-                WriteLineDetail(year + ": " + yearTotal);
+                WriteLineDetail($"{year}: {yearTotal}");
                 answer += yearTotal;
             }
 

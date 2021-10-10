@@ -31,6 +31,6 @@ class Problem023(Problem):
     for i in range(1, upper_bound):
       if not i in two_abundant_number_sums:
         answer += i
-        self.print_detail(str(i) + "; sum = " + str(answer))
+        self.print_detail(f"{i}; sum = {answer}")
 
     return answer

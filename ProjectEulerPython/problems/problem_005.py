@@ -17,6 +17,6 @@ class Problem005(Problem):
         else:
           if entry.power > lcm_entry.power:
             lcm_entry.power = entry.power
-      self.print_detail(str(i) + ": " + str(lcm_factorization.compute_product()))
+      self.print_detail(f"{i}: {lcm_factorization.compute_product()}")
 
     return lcm_factorization.compute_product()

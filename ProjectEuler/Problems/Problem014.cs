@@ -16,7 +16,7 @@
                 {
                     answer = i;
                     maxChainLength = length;
-                    WriteLineDetail("Chain Length = " + length + "; Starting Value = " + i);
+                    WriteLineDetail($"Chain Length = {length}; Starting Value = {i}");
                 }
             }
 

@@ -15,6 +15,6 @@ class Problem008(Problem):
         product *= int(NUMBER_STR[i + j])
       if (product > answer):
         answer = product
-        self.print_detail("index " + str(i) + ": " + str(product))
+        self.print_detail(f"index {i}: {product}")
 
     return answer

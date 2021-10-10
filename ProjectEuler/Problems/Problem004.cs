@@ -15,7 +15,7 @@
                     if (product <= answer) break;
                     if (product.IsPalindrome())
                     {
-                        WriteLineDetail(product + " = " + i + " * " + j);
+                        WriteLineDetail($"{product} = {i} * {j}");
                         answer = product;
                         break;
                     }

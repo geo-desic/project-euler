@@ -18,7 +18,7 @@
 
                 if (product > answer)
                 {
-                    WriteLineDetail("Index " + i + ": " + product);
+                    WriteLineDetail($"Index {i}: {product}");
                     answer = product;
                 }
             }

@@ -28,7 +28,7 @@ namespace ProjectEuler.Problems
         }
 
         //see the section "Approximations for the nth prime number" at https://en.wikipedia.org/wiki/Prime_number_theorem
-        private long UpperBound(int n)
+        private static long UpperBound(int n)
         {
             if (n <= 5) return 11L;
             return (long)Math.Floor(n * (Math.Log(n) + Math.Log(Math.Log(n))));

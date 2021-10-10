@@ -12,7 +12,7 @@ class Problem009(Problem):
         c = n - a - b # since a + b + c = n
         if a * a + b * b == c * c:
           answer = a * b * c
-          self.print_detail("a = " + str(a) + "; b = " + str(b) + "; c = " + str(c))
+          self.print_detail(f"a = {a}; b = {b}; c = {c}")
           break
 
     if answer == 0:

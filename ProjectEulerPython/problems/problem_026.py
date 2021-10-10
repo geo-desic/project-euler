@@ -32,6 +32,6 @@ class Problem026(Problem):
       if length > longest_cycle_length:
         answer = d
         longest_cycle_length = length
-        self.print_detail("d = " + str(d) + "; cycle length = " + str(length))
+        self.print_detail(f"d = {d}; cycle length = {length}")
 
     return answer

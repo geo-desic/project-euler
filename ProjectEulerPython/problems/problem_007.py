@@ -24,6 +24,6 @@ class Problem007(Problem):
         if (index >= n):
           break;
     if (index < n):
-      raise RuntimeError("Invalid upper bound: " + str(ub))
+      raise RuntimeError(f"Invalid upper bound: {ub}")
 
     return i
