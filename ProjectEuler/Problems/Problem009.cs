@@ -18,7 +18,7 @@ namespace ProjectEuler.Problems
                     if (c * c == a * a + b * b)
                     {
                         WriteLineDetail("Pythagorean Triplet:");
-                        WriteLineDetail("a = " + a + "; b = " + b + "; c = " + c);
+                        WriteLineDetail($"a = {a}; b = {b}; c = {c}");
                         answer = a * b * c;
                         break;
                     }

@@ -44,7 +44,7 @@ namespace ProjectEuler.Problems
                 if (!twoAbundantNumberSums.ContainsKey(i))
                 {
                     answer += i;
-                    WriteLineDetail(i + "; Sum = " + answer);
+                    WriteLineDetail($"{i}; Sum = {answer}");
                 }
             }
 

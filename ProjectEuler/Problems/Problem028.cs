@@ -61,7 +61,7 @@
             return answer;
         }
 
-        private int Distance(int middle_index, int x, int y)
+        private static int Distance(int middle_index, int x, int y)
         {
             var d1 = middle_index - x;
             if (d1 < 0) d1 = -d1;
@@ -71,7 +71,7 @@
             return d2;
         }
 
-        private void ChangeDirection(ref int x_inc, ref int y_inc)
+        private static void ChangeDirection(ref int x_inc, ref int y_inc)
         {
             if (x_inc == 1 && y_inc == 0) //right
             {

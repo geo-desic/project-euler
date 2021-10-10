@@ -22,7 +22,7 @@ class Problem014(Problem):
       if length > max_chain_length:
         answer = i
         max_chain_length = length
-        self.print_detail("chain length = " + str(length) + "; starting value = " + str(i))
+        self.print_detail(f"chain length = {length}; starting value = {i}")
 
     return answer
 

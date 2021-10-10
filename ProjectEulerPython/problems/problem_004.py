@@ -14,7 +14,7 @@ class Problem004(Problem):
           break
         if int_helpers.is_palindrome(product):
           answer = product
-          self.print_detail(str(product) + " = " + str(i) + " * " + str(j))
+          self.print_detail(f"{product} = {i} * {j}")
           break
 
     return answer

@@ -78,6 +78,6 @@ class Problem011(Problem):
         if increased:
           coordinate[0] = i
           coordinate[1] = j
-          self.print_detail("(" + str(i) + ", " + str(j) + "); product = " + str(answer) + "; direction = " + direction)
+          self.print_detail(f"({i}, {j}); product = {answer}; direction = {direction}")
 
     return answer

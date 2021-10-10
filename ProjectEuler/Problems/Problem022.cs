@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
             return answer;
         }
 
-        private long AlphabeticValue(string value)
+        private static long AlphabeticValue(string value)
         {
             var result = 0L;
             for (var i = 0; i < value.Length; ++i)

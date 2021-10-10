@@ -12,7 +12,7 @@
             var returnedToFirstPermutation = false;
             while (true)
             {
-                if (index % 10000 == 0) WriteLineDetail(index + ": " + new string(elements));
+                if (index % 10000 == 0) WriteLineDetail($"{index}: {new string(elements)}");
                 if (index == n || returnedToFirstPermutation)
                 {
                     break;

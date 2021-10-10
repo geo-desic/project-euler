@@ -38,7 +38,7 @@
                             a = a_current;
                             b = b_inc;
                             max_length = length;
-                            WriteLineDetail("length = " + length + "; a = " + a + "; b = " + b);
+                            WriteLineDetail($"length = {length}; a = {a}; b = {b}");
                         }
                     }
                 }
@@ -47,7 +47,7 @@
             return a * b;
         }
 
-        private long Function(long n, long a, long b)
+        private static long Function(long n, long a, long b)
         {
             //f(n) = n^2 + an + b
             return n * n + a * n + b;

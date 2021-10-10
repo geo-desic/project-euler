@@ -17,7 +17,7 @@ class Problem012(Problem):
       if (divisors > max_divisors):
         max_divisors = divisors
         answer = triangular_number
-        self.print_detail("Triangular #: " + str(i) + " = " + str(triangular_number) + "; divisor count = " + str(divisors))
+        self.print_detail(f"Triangular #: {i} = {triangular_number}; divisor count = {divisors}")
       i += 1
 
     return answer

@@ -18,7 +18,7 @@
                 if (c.Length == totalDigits) break;
                 else if (c.Length >= detailThreshold)
                 {
-                    WriteLineDetail("Index = " + answer + "; Length = " + c.Length);
+                    WriteLineDetail($"Index = {answer}; Length = {c.Length}");
                     detailThreshold += detailSize;
                 }
                 a = b;

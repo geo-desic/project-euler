@@ -22,7 +22,7 @@
             return answer;
         }
 
-        private void Digits(int n, int[] digits)
+        private static void Digits(int n, int[] digits)
         {
             int d;
             for (var i = 0; i < digits.Length; ++i)
@@ -37,7 +37,7 @@
             }
         }
 
-        private int SumOfFifthPowers(int[] digits)
+        private static int SumOfFifthPowers(int[] digits)
         {
             var result = 0;
             foreach (var d in digits)

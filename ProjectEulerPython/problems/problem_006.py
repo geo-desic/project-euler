@@ -16,9 +16,9 @@ class Problem006(Problem):
     sum_squares = sum_squares_1_to_n(n)
     sum_squared = sum_1_to_n_squared(n)
 
-    self.print_detail("Sum of squares 1 to " + str(n) + ":")
+    self.print_detail(f"Sum of squares 1 to {n}:")
     self.print_detail(sum_squares)
-    self.print_detail("Sum 1 to " + str(n) + " squared:")
+    self.print_detail(f"Sum 1 to {n} squared:")
     self.print_detail(sum_squared)
 
     return sum_squared - sum_squares

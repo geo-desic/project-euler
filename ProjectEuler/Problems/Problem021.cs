@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
                 if (i == sum2 && i != sum1)
                 {
                     answer += i;
-                    WriteLineDetail("Amicable number: " + i + " (" + sum1 + "); Sum = " + answer);
+                    WriteLineDetail($"Amicable number: {i} ({sum1}); Sum = {answer}");
                 }
             }
 

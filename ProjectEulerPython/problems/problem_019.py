@@ -13,7 +13,7 @@ class Problem019(Problem):
         value = date(year, month, 1)
         if value.weekday() == 6:
           year_total += 1
-      self.print_detail(str(year) + ": " + str(year_total))
+      self.print_detail(f"{year}: {year_total}")
       answer += year_total
 
     return answer
