@@ -1,3 +1,5 @@
+from math_helpers import is_pandigital as mh_is_pandigital
+
 INT_WORDS_BELOW_20 = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
 INT_WORDS_TENS_DIGIT = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
 INT_WORDS_AND = "and"
@@ -74,3 +76,41 @@ def int_to_words(n: int, include_and: bool = True) -> str:
   answer = " ".join(list)
 
   return answer
+
+def is_palindrome(s: str) -> bool:
+  return s == reverse(s)
+
+def is_pandigital(value: str, d_min: int, d_max: int) -> bool:
+  """Returns true if the strings digits are pandigital (i.e. contain all digits from min to max exactly once), false otherwise.
+
+  Args:
+    value: String of digits where each character is between 0 and 9
+    d_min: The pandigital digit minimum bound
+    d_max: The pandigital digit maximum bound
+
+  Examples:
+    is_pandigital("3142", 1, 4) returns true
+    is_pandigital("3122", 1, 4) returns false
+
+  """
+  if value is None or len(value) == 0:
+    return False
+  digits = [int(d) for d in value]
+  return mh_is_pandigital(digits, d_min, d_max)
+
+def reverse(s: str) -> str:
+  """Reverses the string provided.
+
+  Example:
+    "Abcd" returns "dcbA".
+
+  """
+  return s[::-1]
+
+def right(s: str, length: int) -> str:
+  """Returns the string's rightmost characters of the length provided."""
+  if (length == 0):
+    return ""
+  if (length > len(s)):
+    return s
+  return s[-length:]

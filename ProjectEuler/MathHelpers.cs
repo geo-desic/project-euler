@@ -22,6 +22,32 @@ namespace ProjectEuler
         }
 
         /// <summary>
+        /// Returns true if the array of digits are pandigital (i.e. contain all digits from min to max exactly once), false otherwise.
+        /// <example>IsPandigital({ 3, 1, 4, 2 }, 1, 4) returns true</example>
+        /// <example>IsPandigital({ 3, 1, 2, 2 }, 1, 4) returns false</example>
+        /// </summary>
+        /// <param name="digits">The array of digits where each entry is between 0 and 9.</param>
+        /// <param name="min">The pandigital digit minimum bound</param>
+        /// <param name="max">The pandigital digit maximum bound</param>
+        public static bool IsPandigital(this int[] digits, int min = 1, int max = 9)
+        {
+            if (digits == null || min < 0 || max > 9 || max < min || digits.Length != max - min + 1) return false;
+            var bitstring = 0;
+            for (var i = 0; i < digits.Length; ++i)
+            {
+                var d = digits[i];
+                if (d < min || d > max) return false;
+                var bit = 1 << d;
+                if ((bitstring & bit) > 0)
+                {
+                    return false;
+                }
+                bitstring |= bit;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Constructs a list of all positive primes less than or equal to the integer provided.
         /// </summary>
         /// <param name="n">The upper bound for prime list.</param>

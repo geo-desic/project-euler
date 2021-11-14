@@ -25,25 +25,13 @@ namespace ProjectEuler
         }
 
         /// <summary>
-        /// Reverses the string provided.
-        /// <example>For example, "ADBC" returns "CBDA".</example>
+        /// Returns true if the string provided is a palindrome (i.e. the sequence of characters and reversed characters are equivalent), false otherwise.
+        /// <example>For example, aabaa returns true and abc returns false.</example>
         /// </summary>
-        public static string Reverse(this string value)
+        /// <param name="value">The string to test whether it is a palindrome.</param>
+        public static bool IsPalindrome(this string value)
         {
-            var charArray = value.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
-
-        /// <summary>
-        /// Returns the string's rightmost characters of the length provided.
-        /// </summary>
-        public static string Right(this string value, int length)
-        {
-            if (length < 0) throw new ArgumentOutOfRangeException("length");
-            else if (length == 0) return string.Empty;
-            if (length > value.Length) length = value.Length;
-            return value.Substring(value.Length - length);
+            return value == value.Reverse();
         }
 
         /// <summary>
@@ -134,6 +122,47 @@ namespace ProjectEuler
             if (builder.Length == 0) builder.Append(INT_WORDS_BELOW_20[0]);
 
             return builder.ToString();
+        }
+
+        /// <summary>
+        /// Returns true if the strings digits are pandigital (i.e. contain all digits from min to max exactly once), false otherwise.
+        /// <example>IsPandigital("3142", 1, 4) returns true</example>
+        /// <example>IsPandigital("3122", 1, 4) returns false</example>
+        /// </summary>
+        /// <param name="value">The string of digits where each character is between 0 and 9.</param>
+        /// <param name="min">The pandigital digit minimum bound</param>
+        /// <param name="max">The pandigital digit maximum bound</param>
+        public static bool IsPandigital(this string value, int min = 1, int max = 9)
+        {
+            if (value == null || value.Length == 0) return false;
+            var digits = new int[value.Length];
+            for (var i = 0; i < value.Length; ++i)
+            {
+                digits[i] = (value[i] - '0');
+            }
+            return digits.IsPandigital(min, max);
+        }
+
+        /// <summary>
+        /// Reverses the string provided.
+        /// <example>For example, "Abcd" returns "dcbA".</example>
+        /// </summary>
+        public static string Reverse(this string value)
+        {
+            var charArray = value.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        /// <summary>
+        /// Returns the string's rightmost characters of the length provided.
+        /// </summary>
+        public static string Right(this string value, int length)
+        {
+            if (length < 0) throw new ArgumentOutOfRangeException("length");
+            else if (length == 0) return string.Empty;
+            if (length > value.Length) length = value.Length;
+            return value.Substring(value.Length - length);
         }
     }
 }

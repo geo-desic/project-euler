@@ -217,5 +217,75 @@ namespace ProjectEulerTests
             var problem = new Problem030() { ConsoleOutput = false, DetailedOutput = false };
             Assert.AreEqual(443839L, problem.Answer());
         }
+
+        [Test]
+        public void Problem031()
+        {
+            var problem = new Problem031() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(73682, problem.Answer());
+        }
+
+        [Test]
+        public void Problem032()
+        {
+            var problem = new Problem032() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(45228, problem.Answer());
+        }
+
+        [Test]
+        public void Problem033()
+        {
+            var problem = new Problem033() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(100, problem.Answer());
+        }
+
+        [Test]
+        public void Problem034()
+        {
+            var problem = new Problem034() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(40730, problem.Answer());
+        }
+
+        [Test]
+        public void Problem035()
+        {
+            var problem = new Problem035() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(55, problem.Answer());
+        }
+
+        [Test]
+        public void Problem036()
+        {
+            var problem = new Problem036() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(872187L, problem.Answer());
+        }
+
+        [Test]
+        public void Problem037()
+        {
+            var problem = new Problem037() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(748317L, problem.Answer());
+        }
+
+        [Test]
+        public void Problem038()
+        {
+            var problem = new Problem038() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(932718654L, problem.Answer());
+        }
+
+        [Test]
+        public void Problem039()
+        {
+            var problem = new Problem039() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(840, problem.Answer());
+        }
+
+        [Test]
+        public void Problem040()
+        {
+            var problem = new Problem040() { ConsoleOutput = false, DetailedOutput = false };
+            Assert.AreEqual(210L, problem.Answer());
+        }
     }
 }
