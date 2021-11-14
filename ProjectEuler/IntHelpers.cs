@@ -1,4 +1,6 @@
-﻿namespace ProjectEuler
+﻿using System.Collections.Generic;
+
+namespace ProjectEuler
 {
     public static class IntHelpers
     {
@@ -20,6 +22,28 @@
         public static bool IsPalindrome(this long value)
         {
             return value == value.ReverseDigits();
+        }
+
+        /// <summary>
+        /// Returns the base value to the power of the exponent as an integer.
+        /// <example>For example, (5, 3) returns 125 = 5^3.</example>
+        /// </summary>
+        /// <param name="valueBase">The base value.</param>
+        /// <param name="exponent">The exponent value.</param>
+        /// <returns></returns>
+        public static int Power(this int valueBase, int exponent)
+        {
+            var result = 1;
+            while (exponent > 0)
+            {
+                if ((exponent & 1) != 0)
+                {
+                    result *= valueBase;
+                }
+                exponent >>= 1;
+                valueBase *= valueBase;
+            }
+            return result;
         }
 
         /// <summary>
@@ -76,6 +100,26 @@
             }
 
             if (negative) return -result;
+            return result;
+        }
+
+        /// <summary>
+        /// Returns a list containing all digits in the integer provided starting at the least significant digit and increasing to the most significant digit.
+        /// </summary>
+        /// <param name="value">The integer whose digits are to be determined.</param>
+        public static List<int> ToDigits(this long value)
+        {
+            var result = new List<int>();
+            if (value < 0) value = -value;
+            else if (value == 0)
+            {
+                result.Add(0);
+            }
+            while (value > 0)
+            {
+                result.Add((int)(value % 10));
+                value /= 10;
+            }
             return result;
         }
 

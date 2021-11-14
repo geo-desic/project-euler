@@ -64,6 +64,16 @@
     <Compile Include="problems\problem_029.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="problems\problem_040.py" />
+    <Compile Include="problems\problem_039.py" />
+    <Compile Include="problems\problem_038.py" />
+    <Compile Include="problems\problem_037.py" />
+    <Compile Include="problems\problem_036.py" />
+    <Compile Include="problems\problem_035.py" />
+    <Compile Include="problems\problem_034.py" />
+    <Compile Include="problems\problem_033.py" />
+    <Compile Include="problems\problem_032.py" />
+    <Compile Include="problems\problem_031.py" />
     <Compile Include="problems\problem_030.py">
       <SubType>Code</SubType>
     </Compile>

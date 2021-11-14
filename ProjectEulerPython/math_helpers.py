@@ -1,3 +1,4 @@
+from int_helpers import is_palindrome
 import list_helpers
 import math
 from prime_factorization import PrimeFactorization, PrimeFactorizationEntry
@@ -102,6 +103,31 @@ def lexicographic_permute(elements: [object]) -> bool:
 
   return result
 
+def is_pandigital(digits: [int], d_min: int = 1, d_max: int = 9) -> bool:
+  """Returns true if the array of digits are pandigital (i.e. contain all digits from min to max exactly once), false otherwise.
+  
+  Args:
+    digits: List of digits where each entry is between 0 and 9
+    d_min: The pandigital digit minimum bound
+    d_max: The pandigital digit maximum bound
+
+  Examples:
+    is_pandigital([ 3, 1, 4, 2 ], 1, 4) returns true
+    is_pandigital([ 3, 1, 2, 2 ], 1, 4) returns false
+
+  """
+  if (digits is None or d_min < 0 or d_max > 9 or d_max < d_min or len(digits) != d_max - d_min + 1):
+    return False
+  bitstring = 0
+  for i in range(0, len(digits)):
+    d = digits[i]
+    if (d < d_min or d > d_max):
+      return False
+    bit = 1 << d
+    if (bitstring & bit) > 0:
+      return False
+    bitstring |= bit
+  return True
 
 def nth_triangular_number(n: int) -> int:
   """Returns the nth triangular number; for proof see: https://en.wikipedia.org/wiki/Triangular_number"""

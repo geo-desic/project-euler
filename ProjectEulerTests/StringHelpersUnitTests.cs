@@ -7,34 +7,46 @@ namespace ProjectEulerTests
     {
         [Test]
         [TestCase("751171125489", '1', 2, 4)]
-        public void IndexFirstCharNotEqualTo(string value, char charValue, int startIndex, int result)
+        public void IndexFirstCharNotEqualTo(string value, char charValue, int startIndex, int expected)
         {
-            Assert.AreEqual(result, value.IndexFirstCharNotEqualTo(charValue, startIndex));
+            Assert.AreEqual(expected, value.IndexFirstCharNotEqualTo(charValue, startIndex));
+        }
+
+        [Test]
+        [TestCase("", 0, 1, false)]
+        [TestCase("0", 0, 0, true)]
+        [TestCase("a", 0, 0, false)]
+        [TestCase("3142", 1, 4, true)]
+        [TestCase("3122", 1, 4, false)]
+        [TestCase("391867254", 1, 9, true)]
+        public void IsPandigital(string value, int min, int max, bool expected)
+        {
+            Assert.AreEqual(expected, value.IsPandigital(min, max));
         }
 
         [Test]
         [TestCase("abcDEFg", "gFEDcba")]
-        public void Reverse(string value, string result)
+        public void Reverse(string value, string expected)
         {
-            Assert.AreEqual(result, value.Reverse());
+            Assert.AreEqual(expected, value.Reverse());
         }
 
         [Test]
         [TestCase("k3bl450hm343", 6, "0hm343")]
         [TestCase("abcd", 17, "abcd")]
         [TestCase("abcd", 0, "")]
-        public void Right(string value, int length, string result)
+        public void Right(string value, int length, string expected)
         {
-            Assert.AreEqual(result, value.Right(length));
+            Assert.AreEqual(expected, value.Right(length));
         }
 
         [Test]
         [TestCase("k3bl450hm343", 6, "k3bl45")]
         [TestCase("abcd", 17, "abcd")]
         [TestCase("abcd", 0, "")]
-        public void Left(string value, int length, string result)
+        public void Left(string value, int length, string expected)
         {
-            Assert.AreEqual(result, value.Left(length));
+            Assert.AreEqual(expected, value.Left(length));
         }
     }
 }

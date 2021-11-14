@@ -28,35 +28,15 @@ from problems.problem_027 import Problem027
 from problems.problem_028 import Problem028
 from problems.problem_029 import Problem029
 from problems.problem_030 import Problem030
-import str_helpers
+from problems.problem_031 import Problem031
+from problems.problem_032 import Problem032
+from problems.problem_033 import Problem033
+from problems.problem_034 import Problem034
+from problems.problem_035 import Problem035
+from problems.problem_036 import Problem036
+from problems.problem_037 import Problem037
+from problems.problem_038 import Problem038
+from problems.problem_039 import Problem039
+from problems.problem_040 import Problem040
 
-Problem030().answer()
-#Problem029().answer()
-#Problem028().answer()
-#Problem027().answer()
-#Problem026().answer()
-#Problem025().answer()
-#Problem024().answer()
-#Problem023().answer()
-#Problem022().answer()
-#Problem021().answer()
-#Problem020().answer()
-#Problem019().answer()
-#Problem018().answer()
-#Problem017().answer()
-#Problem016().answer()
-#Problem015().answer()
-#Problem014().answer()
-#Problem013().answer()
-#Problem012().answer()
-#Problem011().answer()
-#Problem010().answer()
-#Problem009().answer()
-#Problem008().answer()
-#Problem007().answer()
-#Problem006().answer()
-#Problem005().answer()
-#Problem004().answer()
-#Problem003().answer()
-#Problem002().answer()
-#Problem001().answer()
+Problem040().answer()
