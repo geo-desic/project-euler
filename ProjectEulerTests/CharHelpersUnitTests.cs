@@ -10,7 +10,7 @@ namespace ProjectEulerTests
         public void Swap(char[] value, char[] expected)
         {
             CharHelpers.Swap(ref value[0], ref value[1]);
-            Assert.AreEqual(expected, value);
+            Assert.That(expected, Is.EqualTo(value));
         }
 
         [Test]
@@ -18,7 +18,7 @@ namespace ProjectEulerTests
         public void Reverse(char[] value, int startIndex, int endIndex, char[] expected)
         {
             CharHelpers.Reverse(value, startIndex, endIndex);
-            Assert.AreEqual(expected, value);
+            Assert.That(expected, Is.EqualTo(value));
         }
     }
 }

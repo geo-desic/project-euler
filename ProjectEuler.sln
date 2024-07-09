@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29926.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectEuler", "ProjectEuler\ProjectEuler.csproj", "{544A32EE-7330-4A1B-A615-BDEADC4063E3}"
 EndProject
@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectEulerApp", "ProjectE
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProjectEulerPython", "ProjectEulerPython\ProjectEulerPython.pyproj", "{D627C349-A04C-468D-9A56-ACFA7BE614E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectEulerTests", "ProjectEulerTests\ProjectEulerTests.csproj", "{F10F9871-F8B3-4046-B927-3A4A79A5F4A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectEulerTests", "ProjectEulerTests\ProjectEulerTests.csproj", "{F10F9871-F8B3-4046-B927-3A4A79A5F4A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

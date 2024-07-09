@@ -10,7 +10,7 @@ namespace ProjectEulerTests
         [TestCase(752623, false)]
         public void IsPalindrome(long value, bool expected)
         {
-            Assert.AreEqual(expected, value.IsPalindrome());
+            Assert.That(expected, Is.EqualTo(value.IsPalindrome()));
         }
 
         [Test]
@@ -21,7 +21,7 @@ namespace ProjectEulerTests
         [TestCase(17, 4, 83521)]
         public void Power(int valueBase, int exponent, int expected)
         {
-            Assert.AreEqual(expected, valueBase.Power(exponent));
+            Assert.That(expected, Is.EqualTo(valueBase.Power(exponent)));
         }
 
         [Test]
@@ -29,7 +29,7 @@ namespace ProjectEulerTests
         [TestCase(1234567, 7654321)]
         public void ReverseDigits(long value, long expected)
         {
-            Assert.AreEqual(expected, value.ReverseDigits());
+            Assert.That(expected, Is.EqualTo(value.ReverseDigits()));
         }
 
         [Test]
@@ -40,7 +40,7 @@ namespace ProjectEulerTests
         [TestCase(9876543210, new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 })]
         public void ToDigits(long value, int[] expected)
         {
-            Assert.AreEqual(expected, value.ToDigits().ToArray());
+            Assert.That(expected, Is.EqualTo(value.ToDigits().ToArray()));
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace ProjectEulerTests
         [TestCase(23795, "twenty three thousand seven hundred and ninety five")]
         public void ToWords(long value, string expected)
         {
-            Assert.AreEqual(expected, value.ToWords());
+            Assert.That(expected, Is.EqualTo(value.ToWords()));
         }
     }
 }

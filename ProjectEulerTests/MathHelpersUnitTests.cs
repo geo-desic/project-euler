@@ -11,7 +11,7 @@ namespace ProjectEulerTests
         public void PrimeFactorization_CorrectNumberOfEntries(long value, int expected)
         {
             var factorization = MathHelpers.PrimeFactorization(value);
-            Assert.AreEqual(expected, factorization.Entries.Count);
+            Assert.That(expected, Is.EqualTo(factorization.Entries.Count));
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace ProjectEulerTests
             var factorization = MathHelpers.PrimeFactorization(value);
             var entry = factorization.Entry(prime);
             var hasEntry = entry != null;
-            Assert.AreEqual(expected, hasEntry);
+            Assert.That(expected, Is.EqualTo(hasEntry));
         }
 
         [Test]
@@ -40,9 +40,9 @@ namespace ProjectEulerTests
             var factorization = MathHelpers.PrimeFactorization(value);
             var entry = factorization.Entry(prime);
             if (power == 0)
-                Assert.IsNull(entry);
+                Assert.That(entry, Is.Null);
             else
-                Assert.AreEqual(power, entry.Power);
+                Assert.That(power, Is.EqualTo(entry.Power));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace ProjectEulerTests
         public void PrimeFactorization_CorrectProduct(long value)
         {
             var factorization = MathHelpers.PrimeFactorization(value);
-            Assert.AreEqual(value, factorization.ComputeProduct());
+            Assert.That(value, Is.EqualTo(factorization.ComputeProduct()));
         }
 
         [Test]
@@ -80,7 +80,7 @@ namespace ProjectEulerTests
         public void IndexCompositeBySieve_CorrectEntry(int value, bool expected)
         {
             var sieve = MathHelpers.IndexCompositeBySieve(value);
-            Assert.AreEqual(expected, sieve[value]);
+            Assert.That(expected, Is.EqualTo(sieve[value]));
         }
 
         [Test]
@@ -91,7 +91,7 @@ namespace ProjectEulerTests
         [TestCase(new[] { 3, 9, 1, 8, 6, 7, 2, 5, 4 }, 1, 9, true)]
         public void IsPandigital(int[] digits, int min, int max, bool expected)
         {
-            Assert.AreEqual(expected, digits.IsPandigital(min, max));
+            Assert.That(expected, Is.EqualTo(digits.IsPandigital(min, max)));
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace ProjectEulerTests
         [TestCase(35, 630)]
         public void NthTriangularNumber(int value, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.NthTriangularNumber(value));
+            Assert.That(expected, Is.EqualTo(MathHelpers.NthTriangularNumber(value)));
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace ProjectEulerTests
         [TestCase(75600, 120)]
         public void DivisorCount(long value, int expected)
         {
-            Assert.AreEqual(expected, MathHelpers.DivisorCount(value));
+            Assert.That(expected, Is.EqualTo(MathHelpers.DivisorCount(value)));
         }
 
         [Test]
@@ -115,7 +115,7 @@ namespace ProjectEulerTests
         [TestCase("7639699335248664191492064348354", "9306221839601782079348723649643", "16945921174850446270840787997997")]
         public void AddIntegerStrings(string value1, string value2, string expected)
         {
-            Assert.AreEqual(expected, MathHelpers.AddIntegerStrings(value1, value2));
+            Assert.That(expected, Is.EqualTo(MathHelpers.AddIntegerStrings(value1, value2)));
         }
 
         [Test]
@@ -123,7 +123,7 @@ namespace ProjectEulerTests
         [TestCase(2456876, 1228438)]
         public void CollatzFunction(long value, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.CollatzFunction(value));
+            Assert.That(expected, Is.EqualTo(MathHelpers.CollatzFunction(value)));
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace ProjectEulerTests
         [TestCase(77671, 232)]
         public void CollatzLength(long value, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.CollatzLength(value));
+            Assert.That(expected, Is.EqualTo(MathHelpers.CollatzLength(value)));
         }
 
         [Test]
@@ -141,7 +141,7 @@ namespace ProjectEulerTests
         [TestCase("76396993349348354", "93063649643", "7109783022842356319014737622")]
         public void MultiplyIntegerStrings(string value1, string value2, string expected)
         {
-            Assert.AreEqual(expected, MathHelpers.MultiplyIntegerStrings(value1, value2));
+            Assert.That(expected, Is.EqualTo(MathHelpers.MultiplyIntegerStrings(value1, value2)));
         }
 
         [Test]
@@ -155,7 +155,7 @@ namespace ProjectEulerTests
         public void Divisors_Contains(long value, int expected)
         {
             var divisors = MathHelpers.Divisors(value).ToList();
-            Assert.Contains(expected, divisors);
+            Assert.That(divisors, Contains.Item(expected));
         }
 
         [Test]
@@ -164,8 +164,8 @@ namespace ProjectEulerTests
         public void LexicographicPermute(char[] elements, char[] permutation, bool expected)
         {
             var returnValue = MathHelpers.LexicographicPermute(elements);
-            Assert.AreEqual(permutation, elements);
-            Assert.AreEqual(expected, returnValue);
+            Assert.That(permutation, Is.EqualTo(elements));
+            Assert.That(expected, Is.EqualTo(returnValue));
         }
 
         [Test]
@@ -173,14 +173,14 @@ namespace ProjectEulerTests
         public void PrimesLessOrEqualTo(long value, long[] expected)
         {
             var primes = MathHelpers.PrimesLessOrEqualTo(value).ToArray();
-            Assert.AreEqual(expected, primes);
+            Assert.That(expected, Is.EqualTo(primes));
         }
 
         [Test]
         [TestCase(97, 1060)]
         public void SumPrimesLessOrEqualTo(long value, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.SumPrimesLessOrEqualTo(value));
+            Assert.That(expected, Is.EqualTo(MathHelpers.SumPrimesLessOrEqualTo(value)));
         }
 
         [Test]
@@ -188,7 +188,7 @@ namespace ProjectEulerTests
         [TestCase(2457, 1783236, 273)]
         public void Gcd(long value1, long value2, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.Gcd(value1, value2));
+            Assert.That(expected, Is.EqualTo(MathHelpers.Gcd(value1, value2)));
         }
 
         [Test]
@@ -196,7 +196,7 @@ namespace ProjectEulerTests
         [TestCase(2457, 1783236, 16049124)]
         public void Lcm(long value1, long value2, long expected)
         {
-            Assert.AreEqual(expected, MathHelpers.Lcm(value1, value2));
+            Assert.That(expected, Is.EqualTo(MathHelpers.Lcm(value1, value2)));
         }
     }
 }

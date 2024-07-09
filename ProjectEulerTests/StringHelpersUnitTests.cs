@@ -9,7 +9,7 @@ namespace ProjectEulerTests
         [TestCase("751171125489", '1', 2, 4)]
         public void IndexFirstCharNotEqualTo(string value, char charValue, int startIndex, int expected)
         {
-            Assert.AreEqual(expected, value.IndexFirstCharNotEqualTo(charValue, startIndex));
+            Assert.That(expected, Is.EqualTo(value.IndexFirstCharNotEqualTo(charValue, startIndex)));
         }
 
         [Test]
@@ -21,14 +21,14 @@ namespace ProjectEulerTests
         [TestCase("391867254", 1, 9, true)]
         public void IsPandigital(string value, int min, int max, bool expected)
         {
-            Assert.AreEqual(expected, value.IsPandigital(min, max));
+            Assert.That(expected, Is.EqualTo(value.IsPandigital(min, max)));
         }
 
         [Test]
         [TestCase("abcDEFg", "gFEDcba")]
         public void Reverse(string value, string expected)
         {
-            Assert.AreEqual(expected, value.Reverse());
+            Assert.That(expected, Is.EqualTo(value.Reverse()));
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace ProjectEulerTests
         [TestCase("abcd", 0, "")]
         public void Right(string value, int length, string expected)
         {
-            Assert.AreEqual(expected, value.Right(length));
+            Assert.That(expected, Is.EqualTo(value.Right(length)));
         }
 
         [Test]
@@ -46,7 +46,7 @@ namespace ProjectEulerTests
         [TestCase("abcd", 0, "")]
         public void Left(string value, int length, string expected)
         {
-            Assert.AreEqual(expected, value.Left(length));
+            Assert.That(expected, Is.EqualTo(value.Left(length)));
         }
     }
 }
