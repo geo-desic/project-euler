@@ -8,9 +8,7 @@
         public static void Swap(ref char a, ref char b)
         {
             if (a == b) return;
-            var temp = a;
-            a = b;
-            b = temp;
+            (b, a) = (a, b);
         }
 
         /// <summary>

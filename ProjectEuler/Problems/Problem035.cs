@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem035 : Problem<int>
     {
+        public Problem035(ILogger<Problem035> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var answer = 0;
@@ -17,14 +20,14 @@ namespace ProjectEuler.Problems
                 if (!composite[i]) primes.Add(i);
             }
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             foreach (var prime in primes)
             {
                 var primeString = prime.ToString();
                 if (prime < 10)
                 {
                     ++answer;
-                    WriteLineDetail(prime);
+                    Logger.LogDebug("{prime}", prime);
                 }
                 // if the prime is two digits or longer, it cannot include 0, 2, 4, 5, 6, or 8 because at least one rotation would be divisible by 2 or 5
                 else if ((primeString.IndexOf('0') == -1 && primeString.IndexOf('2') == -1 && primeString.IndexOf('4') == -1 && primeString.IndexOf('5') == -1 && primeString.IndexOf('6') == -1 && primeString.IndexOf('8') == -1))
@@ -43,7 +46,7 @@ namespace ProjectEuler.Problems
                     if (allRotationsPrime)
                     {
                         ++answer;
-                        WriteLineDetail(prime);
+                        Logger.LogDebug("{prime}", prime);
                     }
                 }
             }

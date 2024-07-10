@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectEuler.Problems
 {
     public class Problem021 : Problem<long>
     {
-        public Problem021()
+        public Problem021(ILogger<Problem021> logger) : base(logger)
         {
             cache = new Dictionary<long, long>();
         }
@@ -22,7 +23,7 @@ namespace ProjectEuler.Problems
                 if (i == sum2 && i != sum1)
                 {
                     answer += i;
-                    WriteLineDetail($"Amicable number: {i} ({sum1}); Sum = {answer}");
+                    Logger.LogDebug("Amicable number: {i} ({sum1}); Sum = {answer}", i, sum1, answer);
                 }
             }
 

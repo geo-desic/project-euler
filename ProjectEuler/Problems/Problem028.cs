@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem028 : Problem<long>
     {
+        public Problem028(ILogger<Problem028> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var n = 1001;

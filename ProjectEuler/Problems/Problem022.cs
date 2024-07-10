@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ProjectEuler.Problems
 {
     public class Problem022 : Problem<long>
     {
+        public Problem022(ILogger<Problem022> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 0L;

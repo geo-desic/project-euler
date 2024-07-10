@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem033 : Problem<int>
     {
+        public Problem033(ILogger<Problem033> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             // n  : numerator
@@ -14,7 +18,7 @@
             var numeratorProduct = 1;
             var denominatorProduct = 1;
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var n10 = 1; n10 <= 9; ++n10)
             {
                 for (var n1 = 1; n1 <= 9; ++n1)
@@ -36,7 +40,7 @@
                             d = d10 * 10 + d1;
                             if (FractionsEquivalent(n, d, n10, d1) && n < d)
                             {
-                                WriteLineDetail($"{n} / {d} = {n10} / {d1}");
+                                Logger.LogDebug("{n} / {d} = {n10} / {d1}", n, d, n10, d1);
                                 numeratorProduct *= n10;
                                 denominatorProduct *= d1;
                             }
@@ -47,7 +51,7 @@
                             d = d10 * 10 + d1;
                             if (FractionsEquivalent(n, d, n1, d10) && n < d)
                             {
-                                WriteLineDetail($"{n} / {d} = {n1} / {d10}");
+                                Logger.LogDebug("{n} / {d} = {n1} / {d10}", n, d, n1, d10);
                                 numeratorProduct *= n1;
                                 denominatorProduct *= d10;
                             }
@@ -59,8 +63,8 @@
             var gcd = (int)MathHelpers.Gcd(numeratorProduct, denominatorProduct);
             numeratorProduct /= gcd;
             denominatorProduct /= gcd;
-            WriteLineDetail("Product In Lowest Terms:");
-            WriteLineDetail($"{numeratorProduct} / {denominatorProduct}");
+            Logger.LogDebug("Product In Lowest Terms:");
+            Logger.LogDebug("{numeratorProduct} / {denominatorProduct}", numeratorProduct, denominatorProduct);
 
             return denominatorProduct;
         }

@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem032 : Problem<int>
     {
+        public Problem032(ILogger<Problem032> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var answer = 0;
@@ -17,7 +20,7 @@ namespace ProjectEuler.Problems
 
             var uniqueProducts = new List<int>();
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
 
             for (var m = 2; m <= 99; ++m)
             {
@@ -37,7 +40,7 @@ namespace ProjectEuler.Problems
                             {
                                 uniqueProducts.Add(p);
                                 answer += p;
-                                WriteLineDetail($"{p} = {m} * {n}");
+                                Logger.LogDebug("{p} = {m} * {n}", p, m, n);
                             }
                         }
                     }

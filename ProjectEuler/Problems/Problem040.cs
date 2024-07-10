@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem040 : Problem<long>
     {
+        public Problem040(ILogger<Problem040> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 1L;
@@ -14,9 +17,9 @@ namespace ProjectEuler.Problems
                 var info = DigitIndexToInformation(index);
                 answer *= info.Digit;
                 digits.Add(info.Digit);
-                WriteLineDetail($"d_{index} = {info.Digit} (number = {info.Number}; index = {info.NumberIndex + 1})");
+                Logger.LogDebug("d_{index} = {digit} (number = {number}; index = {numberIndex})", index, info.Digit, info.Number, info.NumberIndex + 1);
             }
-            WriteLineDetail($"{answer} = {string.Join(" * ", digits)}");
+            Logger.LogDebug("{answer} = {product}", answer, string.Join(" * ", digits));
             return answer;
         }
 

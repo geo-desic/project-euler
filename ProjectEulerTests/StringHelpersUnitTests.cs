@@ -7,7 +7,7 @@ namespace ProjectEulerTests
     {
         [Test]
         [TestCase("751171125489", '1', 2, 4)]
-        public void IndexFirstCharNotEqualTo(string value, char charValue, int startIndex, int expected)
+        public void IndexFirstCharNotEqualTo_SpecifiedInput_ExpectedResult(string value, char charValue, int startIndex, int expected)
         {
             Assert.That(expected, Is.EqualTo(value.IndexFirstCharNotEqualTo(charValue, startIndex)));
         }
@@ -19,14 +19,14 @@ namespace ProjectEulerTests
         [TestCase("3142", 1, 4, true)]
         [TestCase("3122", 1, 4, false)]
         [TestCase("391867254", 1, 9, true)]
-        public void IsPandigital(string value, int min, int max, bool expected)
+        public void IsPandigital_SpecifiedInput_ExpectedResult(string value, int min, int max, bool expected)
         {
             Assert.That(expected, Is.EqualTo(value.IsPandigital(min, max)));
         }
 
         [Test]
         [TestCase("abcDEFg", "gFEDcba")]
-        public void Reverse(string value, string expected)
+        public void Reverse_SpecifiedInput_ExpectedResult(string value, string expected)
         {
             Assert.That(expected, Is.EqualTo(value.Reverse()));
         }
@@ -35,7 +35,7 @@ namespace ProjectEulerTests
         [TestCase("k3bl450hm343", 6, "0hm343")]
         [TestCase("abcd", 17, "abcd")]
         [TestCase("abcd", 0, "")]
-        public void Right(string value, int length, string expected)
+        public void Right_SpecifiedInput_ExpectedResult(string value, int length, string expected)
         {
             Assert.That(expected, Is.EqualTo(value.Right(length)));
         }
@@ -44,7 +44,7 @@ namespace ProjectEulerTests
         [TestCase("k3bl450hm343", 6, "k3bl45")]
         [TestCase("abcd", 17, "abcd")]
         [TestCase("abcd", 0, "")]
-        public void Left(string value, int length, string expected)
+        public void Left_SpecifiedInput_ExpectedResult(string value, int length, string expected)
         {
             Assert.That(expected, Is.EqualTo(value.Left(length)));
         }

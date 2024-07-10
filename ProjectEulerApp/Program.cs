@@ -1,12 +1,9 @@
-﻿using ProjectEuler.Problems;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ProjectEulerApp;
 
-namespace ProjectEulerApp
-{
-    class Program
-    {
-        static void Main()
-        {
-            (new Problem040() { DetailedOutput = true }).Answer();
-        }
-    }
-}
+HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddHostedService<ProblemWorker>();
+
+IHost host = builder.Build();
+host.Run();

@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjectEuler.Problems
 {
     public class Problem023 : Problem<long>
     {
+        public Problem023(ILogger<Problem023> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 0L;
@@ -44,7 +47,7 @@ namespace ProjectEuler.Problems
                 if (!twoAbundantNumberSums.ContainsKey(i))
                 {
                     answer += i;
-                    WriteLineDetail($"{i}; Sum = {answer}");
+                    Logger.LogDebug("{i}; Sum = {answer}", i, answer);
                 }
             }
 

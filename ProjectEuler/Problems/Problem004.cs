@@ -1,12 +1,16 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem004 : Problem<int>
     {
+        public Problem004(ILogger<Problem004> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var answer = 0;
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var i = 999; i >= 100; --i)
             {
                 for (var j = 999; j >= i; --j)
@@ -15,7 +19,7 @@
                     if (product <= answer) break;
                     if (product.IsPalindrome())
                     {
-                        WriteLineDetail($"{product} = {i} * {j}");
+                        Logger.LogDebug("{product} = {i} * {j}", product, i, j);
                         answer = product;
                         break;
                     }

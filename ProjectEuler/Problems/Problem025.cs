@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem025 : Problem<long>
     {
+        public Problem025(ILogger<Problem025> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var a = "1";
@@ -18,7 +22,7 @@
                 if (c.Length == totalDigits) break;
                 else if (c.Length >= detailThreshold)
                 {
-                    WriteLineDetail($"Index = {answer}; Length = {c.Length}");
+                    Logger.LogDebug("Index = {answer}; Length = {length}", answer, c.Length);
                     detailThreshold += detailSize;
                 }
                 a = b;

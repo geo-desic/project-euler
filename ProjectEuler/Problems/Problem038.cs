@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem038 : Problem<long>
     {
+        public Problem038(ILogger<Problem038> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             // (1, 2, ..., n) and let i be the integer

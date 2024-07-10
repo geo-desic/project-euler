@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem020 : Problem<int>
     {
+        public Problem020(ILogger<Problem020> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var product = "1";
@@ -10,7 +14,7 @@
                 product = MathHelpers.MultiplyIntegerStrings(product, i.ToString());
             }
 
-            WriteLineDetail(product);
+            Logger.LogDebug("{product}", product);
 
             var answer = 0;
             for (var i = 0; i < product.Length; ++i)

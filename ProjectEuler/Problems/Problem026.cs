@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem026 : Problem<int>
     {
+        public Problem026(ILogger<Problem026> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var answer = 0;
@@ -17,7 +20,7 @@ namespace ProjectEuler.Problems
                 {
                     answer = d;
                     longestCycleLength = cycleLength;
-                    WriteLineDetail($"d = {d}; cycle length = {cycleLength}");
+                    Logger.LogDebug("d = {d}; cycle length = {cycleLength}", d, cycleLength);
                 }
             }
 

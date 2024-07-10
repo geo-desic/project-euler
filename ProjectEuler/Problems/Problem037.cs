@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ProjectEuler.Problems
 {
     public class Problem037 : Problem<long>
     {
+        public Problem037(ILogger<Problem037> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             // must be at least 2 digits or more
@@ -16,7 +19,7 @@ namespace ProjectEuler.Problems
             var countMiddleDigitsBound = 4;
             var isCompositeBySieve = MathHelpers.IndexCompositeBySieve(UpperBoundSieve(countMiddleDigitsBound));
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
 
             for (var countMiddleDigits = 0; countMiddleDigits <= countMiddleDigitsBound; ++countMiddleDigits)
             {
@@ -73,7 +76,7 @@ namespace ProjectEuler.Problems
 
                                 if (primeTruncatableLeft)
                                 {
-                                    WriteLineDetail(number);
+                                    Logger.LogDebug("{number}", number);
                                     answer += number;
                                 }
                             }

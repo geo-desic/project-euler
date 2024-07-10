@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem018 : Problem<long>
     {
-        public Problem018()
+        public Problem018(ILogger<Problem018> logger) : base(logger)
         {
             triangle = CreateTriangle();
             cache = new Dictionary<string, int>();

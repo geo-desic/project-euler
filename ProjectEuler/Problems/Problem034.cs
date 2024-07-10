@@ -1,12 +1,16 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem034 : Problem<int>
     {
+        public Problem034(ILogger<Problem034> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             var answer = 0;
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var n = 10; n < 99999; ++n)
             {
                 var value = n;
@@ -20,7 +24,7 @@
                 }
                 if (n == digitFactorialSum)
                 {
-                    WriteLineDetail(n);
+                    Logger.LogDebug("{n}", n);
                     answer += n;
                 }
             }

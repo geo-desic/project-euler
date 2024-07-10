@@ -1,23 +1,26 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ProjectEuler.Problems
 {
     public class Problem007 : Problem<long>
     {
+        public Problem007(ILogger<Problem007> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var n = 10001;
             var upperBound = UpperBound(n);
             var compositeSieve = MathHelpers.IndexCompositeBySieve(upperBound);
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             var index = 0;
             long i;
             for (i = 2L; i <= upperBound; ++i)
             {
                 if (!compositeSieve[i])
                 {
-                    WriteLineDetail(i);
+                    Logger.LogDebug("{i}", i);
                     ++index;
                     if (index >= n) break;
                 }

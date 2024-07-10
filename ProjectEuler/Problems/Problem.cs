@@ -1,40 +1,29 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
 
 namespace ProjectEuler.Problems
 {
-    public abstract class Problem<T>
+    public abstract class Problem<T> : IProblem
     {
-        public Problem(bool consoleOutput = true, bool detailedOutput = true)
+        public Problem(ILogger<Problem<T>> logger)
         {
-            ConsoleOutput = consoleOutput;
-            DetailedOutput = detailedOutput;
+            Logger = logger;
         }
 
-        public bool ConsoleOutput { get; set; }
-
-        public bool DetailedOutput { get; set; }
+        protected ILogger<Problem<T>> Logger { get; private set; }
 
         protected abstract T CalculateAnswer();
 
         public T Answer()
         {
             var answer = CalculateAnswer();
-
-            if (ConsoleOutput)
-            {
-                Console.WriteLine("Answer:");
-                Console.WriteLine(answer);
-            }
+            Logger.LogInformation("Answer = {answer}", answer);
 
             return answer;
         }
 
-        protected void WriteLineDetail(object value)
+        object IProblem.Answer()
         {
-            if (ConsoleOutput && DetailedOutput)
-            {
-                Console.WriteLine(value);
-            }
+            return Answer();
         }
     }
 }

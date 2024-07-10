@@ -1,12 +1,16 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem005 : Problem<long>
     {
+        public Problem005(ILogger<Problem005> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var lcmFactorization = new PrimeFactorization();
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var i = 2; i <= 20; ++i)
             {
                 var factorization = i.PrimeFactorization();
@@ -19,7 +23,7 @@
                         if (item.Power > lcmEntry.Power) lcmEntry.Power = item.Power;
                     }
                 }
-                WriteLineDetail($"{i}: {lcmFactorization.ComputeProduct()}");
+                Logger.LogDebug("{i}: {product}", i, lcmFactorization.ComputeProduct());
             }
 
             return lcmFactorization.ComputeProduct();

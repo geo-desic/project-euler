@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 
 namespace ProjectEuler.Problems
 {
     public class Problem009 : Problem<long>
     {
+        public Problem009(ILogger<Problem009> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 0L;
@@ -17,8 +20,8 @@ namespace ProjectEuler.Problems
                     var c = n - a - b;
                     if (c * c == a * a + b * b)
                     {
-                        WriteLineDetail("Pythagorean Triplet:");
-                        WriteLineDetail($"a = {a}; b = {b}; c = {c}");
+                        Logger.LogDebug("Pythagorean Triplet:");
+                        Logger.LogDebug("a = {a}; b = {b}; c = {c}", a, b, c);
                         answer = a * b * c;
                         break;
                     }

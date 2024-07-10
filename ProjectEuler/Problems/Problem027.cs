@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem027 : Problem<long>
     {
+        public Problem027(ILogger<Problem027> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var upper_bound_n = 100L; // guess
@@ -38,7 +42,7 @@
                             a = a_current;
                             b = b_inc;
                             max_length = length;
-                            WriteLineDetail($"length = {length}; a = {a}; b = {b}");
+                            Logger.LogDebug("length = {length}; a = {a}; b = {b}", length, a, b);
                         }
                     }
                 }

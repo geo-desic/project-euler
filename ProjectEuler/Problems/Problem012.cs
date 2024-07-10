@@ -1,12 +1,16 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem012 : Problem<long>
     {
+        public Problem012(ILogger<Problem012> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 0L;
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             var i = 1;
             var maxDivisors = 1;
             while (maxDivisors <= 500)
@@ -15,7 +19,7 @@
                 var divisors = MathHelpers.DivisorCount(triangularNumber);
                 if (divisors > maxDivisors)
                 {
-                    WriteLineDetail($"Triangular #{i} = {triangularNumber}; Divisor Count = {divisors}");
+                    Logger.LogDebug("Triangular #{i} = {triangularNumber}; Divisor Count = {divisorCount}", i, triangularNumber, divisors);
                     maxDivisors = divisors;
                     answer = triangularNumber;
                 }

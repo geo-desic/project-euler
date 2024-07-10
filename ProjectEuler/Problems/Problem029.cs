@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem029 : Problem<long>
     {
+        public Problem029(ILogger<Problem029> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             // unique a^b terms where 2 <= a <= 100 and 2 <= b <= 100

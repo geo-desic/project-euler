@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem011 : Problem<long>
     {
+        public Problem011(ILogger<Problem011> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             return MaxProductInALine(grid, 4);

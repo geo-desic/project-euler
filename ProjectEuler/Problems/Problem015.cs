@@ -1,7 +1,11 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem015 : Problem<long>
     {
+        public Problem015(ILogger<Problem015> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             //every path can be represented by a string of length 40 containing exactly twenty D (down) characters and twenty R (right)

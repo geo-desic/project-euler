@@ -1,13 +1,17 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem008 : Problem<long>
     {
+        public Problem008(ILogger<Problem008> logger) : base(logger) { }
+
         protected override long CalculateAnswer()
         {
             var answer = 0L;
             var n = 13;
 
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var i = 0; i < number.Length - n; ++i)
             {
                 var product = 1L;
@@ -18,7 +22,7 @@
 
                 if (product > answer)
                 {
-                    WriteLineDetail($"Index {i}: {product}");
+                    Logger.LogDebug("Index {index}: {product}", i, product);
                     answer = product;
                 }
             }

@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace ProjectEuler.Problems
 {
     public class Problem039 : Problem<int>
     {
+        public Problem039(ILogger<Problem039> logger) : base(logger) { }
+
         protected override int CalculateAnswer()
         {
             // p = perimeter
@@ -22,7 +25,7 @@ namespace ProjectEuler.Problems
                     {
                         maxSolutions = solutions;
                         answer = triangle.P;
-                        WriteLineDetail($"p = {answer}; solutions = {solutions}");
+                        Logger.LogDebug("p = {answer}; solutions = {solutions}", answer, solutions);
                     }
                 }
             }

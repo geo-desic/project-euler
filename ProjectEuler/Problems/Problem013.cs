@@ -1,15 +1,19 @@
-﻿namespace ProjectEuler.Problems
+﻿using Microsoft.Extensions.Logging;
+
+namespace ProjectEuler.Problems
 {
     public class Problem013 : Problem<string>
     {
+        public Problem013(ILogger<Problem013> logger) : base(logger) { }
+
         protected override string CalculateAnswer()
         {
             var sum = numbers[0];
-            WriteLineDetail("Incremental Results:");
+            Logger.LogDebug("Incremental Results:");
             for (var i = 1; i < numbers.Length; ++i)
             {
                 sum = MathHelpers.AddIntegerStrings(sum, numbers[i]);
-                WriteLineDetail(sum);
+                Logger.LogDebug("{sum}", sum);
             }
 
             return sum.Left(10);
