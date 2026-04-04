@@ -34,14 +34,11 @@ namespace ProjectEuler.Problems
                     {
                         var p = n * m;
                         var identityString = $"{n}{m}{p}";
-                        if (identityString.IsPandigital(1, 9))
+                        if (identityString.IsPandigital(1, 9) && !uniqueProducts.Contains(p))
                         {
-                            if (!uniqueProducts.Contains(p))
-                            {
-                                uniqueProducts.Add(p);
-                                answer += p;
-                                Logger.LogDebug("{p} = {m} * {n}", p, m, n);
-                            }
+                            uniqueProducts.Add(p);
+                            answer += p;
+                            Logger.LogDebug("{P} = {M} * {N}", p, m, n);
                         }
                     }
                 }

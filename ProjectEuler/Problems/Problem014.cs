@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
                 {
                     answer = i;
                     maxChainLength = length;
-                    Logger.LogDebug("Chain Length = {length}; Starting Value = {startingValue}", length, i);
+                    Logger.LogDebug("Chain Length = {Length}; Starting Value = {StartingValue}", length, i);
                 }
             }
 

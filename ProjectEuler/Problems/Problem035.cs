@@ -27,7 +27,7 @@ namespace ProjectEuler.Problems
                 if (prime < 10)
                 {
                     ++answer;
-                    Logger.LogDebug("{prime}", prime);
+                    Logger.LogDebug("{Prime}", prime);
                 }
                 // if the prime is two digits or longer, it cannot include 0, 2, 4, 5, 6, or 8 because at least one rotation would be divisible by 2 or 5
                 else if ((primeString.IndexOf('0') == -1 && primeString.IndexOf('2') == -1 && primeString.IndexOf('4') == -1 && primeString.IndexOf('5') == -1 && primeString.IndexOf('6') == -1 && primeString.IndexOf('8') == -1))
@@ -46,7 +46,7 @@ namespace ProjectEuler.Problems
                     if (allRotationsPrime)
                     {
                         ++answer;
-                        Logger.LogDebug("{prime}", prime);
+                        Logger.LogDebug("{Prime}", prime);
                     }
                 }
             }

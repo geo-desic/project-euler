@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
                 {
                     answer = d;
                     longestCycleLength = cycleLength;
-                    Logger.LogDebug("d = {d}; cycle length = {cycleLength}", d, cycleLength);
+                    Logger.LogDebug("d = {D}; cycle length = {CycleLength}", d, cycleLength);
                 }
             }
 

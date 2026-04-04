@@ -17,7 +17,7 @@ namespace ProjectEuler.Problems
             {
                 if (a2 % 2 == 0)
                 {
-                    Logger.LogDebug("{term}", a2);
+                    Logger.LogDebug("{Term}", a2);
                     answer += a2;
                 }
                 var next = a1 + a2;

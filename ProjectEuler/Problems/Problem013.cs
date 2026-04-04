@@ -13,7 +13,7 @@ namespace ProjectEuler.Problems
             for (var i = 1; i < numbers.Length; ++i)
             {
                 sum = MathHelpers.AddIntegerStrings(sum, numbers[i]);
-                Logger.LogDebug("{sum}", sum);
+                Logger.LogDebug("{Sum}", sum);
             }
 
             return sum.Left(10);

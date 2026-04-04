@@ -210,10 +210,10 @@ namespace ProjectEuler
             var carry = 0;
             for (var i = maxLength - 1; i >= 0; --i)
             {
-                var sum = ((int)(integer2[i] - '0')) + carry;
+                var sum = integer2[i] - '0' + carry;
                 if (i >= lengthDiff)
                 {
-                    sum += ((int)(integer1[i - lengthDiff] - '0'));
+                    sum += integer1[i - lengthDiff] - '0';
                 }
                 result += (char)(sum % 10 + '0');
                 carry = sum / 10;
@@ -243,7 +243,7 @@ namespace ProjectEuler
 
             var digitsInReverse = new int[integer1.Length + integer2.Length];
             var index1 = 0;
-            var index2 = 0;
+            int index2;
 
             for (var i = integer1.Length - 1; i >= 0; --i)
             {
@@ -311,7 +311,7 @@ namespace ProjectEuler
             if (lastIndex < 1) return true;
 
             var i = lastIndex - 1;
-            while (i >= 0 && !(elements[i] < elements[i + 1])) --i;
+            while (i >= 0 && elements[i] >= elements[i + 1]) --i;
 
             var result = false;
             if (i < 0)
@@ -322,7 +322,7 @@ namespace ProjectEuler
             else
             {
                 var j = lastIndex;
-                while (j > i + 1 && !(elements[j] > elements[i])) --j;
+                while (j > i + 1 && elements[j] <= elements[i]) --j;
                 CharHelpers.Swap(ref elements[i], ref elements[j]);
                 elements.Reverse(i + 1, lastIndex);
             }

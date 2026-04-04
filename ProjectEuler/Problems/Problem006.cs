@@ -12,10 +12,10 @@ namespace ProjectEuler.Problems
             var sumOfSquares1ToN = SumOfSquares1ToN(n);
             var sum1ToNSquared = Sum1ToNSquared(n);
 
-            Logger.LogDebug("Sum Of Squares 1 To {n}:", n);
-            Logger.LogDebug("{sumOfSquares1ToN}", sumOfSquares1ToN);
-            Logger.LogDebug("Sum 1 To {n} Squared:", n);
-            Logger.LogDebug("{sum1ToNSquared}", sum1ToNSquared);
+            Logger.LogDebug("Sum Of Squares 1 To {N}:", n);
+            Logger.LogDebug("{SumOfSquares1ToN}", sumOfSquares1ToN);
+            Logger.LogDebug("Sum 1 To {N} Squared:", n);
+            Logger.LogDebug("{Sum1ToNSquared}", sum1ToNSquared);
 
             return sum1ToNSquared - sumOfSquares1ToN;
         }

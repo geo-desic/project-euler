@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
 
                 if (product > answer)
                 {
-                    Logger.LogDebug("Index {index}: {product}", i, product);
+                    Logger.LogDebug("Index {Index}: {Product}", i, product);
                     answer = product;
                 }
             }

@@ -17,10 +17,10 @@ namespace ProjectEuler.Problems
                 var yearTotal = 0;
                 for (var month = 1; month <= 12; ++month)
                 {
-                    var date = new DateTime(year, month, 1);
+                    var date = new DateTime(year, month, 1, 0, 0, 0, DateTimeKind.Utc);
                     if (date.DayOfWeek == DayOfWeek.Sunday) ++yearTotal;
                 }
-                Logger.LogDebug("{year}: {yearTotal}", year, yearTotal);
+                Logger.LogDebug("{Year}: {YearTotal}", year, yearTotal);
                 answer += yearTotal;
             }
 

@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
                 if (i == sum2 && i != sum1)
                 {
                     answer += i;
-                    Logger.LogDebug("Amicable number: {i} ({sum1}); Sum = {answer}", i, sum1, answer);
+                    Logger.LogDebug("Amicable number: {Index} ({Sum1}); Sum = {Answer}", i, sum1, answer);
                 }
             }
 

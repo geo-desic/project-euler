@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="ProjectEuler/ProjectEuler.csproj" />
+  <Project Path="ProjectEulerApp/ProjectEulerApp.csproj" />
+  <Project Path="ProjectEulerPython/ProjectEulerPython.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="d627c349-a04c-468d-9a56-acfa7be614e6">
+    <Build Project="false" />
+  </Project>
+  <Project Path="ProjectEulerTests/ProjectEulerTests.csproj" />
+</Solution>

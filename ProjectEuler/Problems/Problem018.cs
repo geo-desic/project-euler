@@ -47,7 +47,7 @@ namespace ProjectEuler.Problems
 
         private readonly Dictionary<string, int> cache;
 
-        private int[][] CreateTriangle()
+        private static int[][] CreateTriangle()
         {
             int[][] result = new int[15][];
             result[0] = new int[] { 75 };

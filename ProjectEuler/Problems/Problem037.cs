@@ -76,7 +76,7 @@ namespace ProjectEuler.Problems
 
                                 if (primeTruncatableLeft)
                                 {
-                                    Logger.LogDebug("{number}", number);
+                                    Logger.LogDebug("{Number}", number);
                                     answer += number;
                                 }
                             }

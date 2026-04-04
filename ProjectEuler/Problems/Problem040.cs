@@ -17,9 +17,9 @@ namespace ProjectEuler.Problems
                 var info = DigitIndexToInformation(index);
                 answer *= info.Digit;
                 digits.Add(info.Digit);
-                Logger.LogDebug("d_{index} = {digit} (number = {number}; index = {numberIndex})", index, info.Digit, info.Number, info.NumberIndex + 1);
+                Logger.LogDebug("d_{Index} = {Digit} (number = {Number}; index = {NumberIndex})", index, info.Digit, info.Number, info.NumberIndex + 1);
             }
-            Logger.LogDebug("{answer} = {product}", answer, string.Join(" * ", digits));
+            Logger.LogDebug("{Answer} = {Product}", answer, string.Join(" * ", digits));
             return answer;
         }
 
@@ -93,7 +93,7 @@ namespace ProjectEuler.Problems
             return number.ToString()[digit] - '0';
         }
 
-        private class DigitIndexInformation
+        private sealed class DigitIndexInformation
         {
             public int Digit { get; }
             public long Number { get; }

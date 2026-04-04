@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
             return MaxProductInALine(grid, 4);
         }
 
-        private long MaxProductInALine(long[,] array, int lineLength)
+        private static long MaxProductInALine(long[,] array, int lineLength)
         {
             var height = array.GetLength(0);
             var width = array.GetLength(1);

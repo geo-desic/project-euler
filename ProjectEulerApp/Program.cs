@@ -6,4 +6,4 @@ HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<ProblemWorker>();
 
 IHost host = builder.Build();
-host.Run();
+await host.RunAsync();

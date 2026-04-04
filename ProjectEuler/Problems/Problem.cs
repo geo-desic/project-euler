@@ -4,7 +4,7 @@ namespace ProjectEuler.Problems
 {
     public abstract class Problem<T> : IProblem
     {
-        public Problem(ILogger<Problem<T>> logger)
+        protected Problem(ILogger<Problem<T>> logger)
         {
             Logger = logger;
         }
@@ -16,7 +16,7 @@ namespace ProjectEuler.Problems
         public T Answer()
         {
             var answer = CalculateAnswer();
-            Logger.LogInformation("Answer = {answer}", answer);
+            Logger.LogInformation("Answer = {Answer}", answer);
 
             return answer;
         }

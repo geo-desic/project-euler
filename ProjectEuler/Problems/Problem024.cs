@@ -16,7 +16,7 @@ namespace ProjectEuler.Problems
             var returnedToFirstPermutation = false;
             while (true)
             {
-                if (index % 10000 == 0) Logger.LogDebug("{index}: {elements}", index, new string(elements));
+                if (index % 10000 == 0) Logger.LogDebug("{Index}: {Elements}", index, new string(elements));
                 if (index == n || returnedToFirstPermutation)
                 {
                     break;

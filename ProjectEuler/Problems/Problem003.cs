@@ -15,7 +15,7 @@ namespace ProjectEuler.Problems
             Logger.LogDebug("Prime Factors:");
             foreach (var item in primeFactorization.Entries)
             {
-                Logger.LogDebug("{primeFactor}", item.Prime);
+                Logger.LogDebug("{PrimeFactor}", item.Prime);
                 if (item.Prime > answer) answer = item.Prime;
             }
 

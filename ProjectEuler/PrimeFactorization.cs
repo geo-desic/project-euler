@@ -7,7 +7,7 @@ namespace ProjectEuler
     /// Represents the prime factorization for an integer.
     /// <example>For example, 2^2 * 3 * 5 is the prime factorization for the integer 60.</example>
     /// </summary>
-    public class PrimeFactorization
+    public sealed class PrimeFactorization
     {
         public PrimeFactorization()
         {

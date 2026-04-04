@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
             {
                 for (var value = 0; value < valueCombinations.Length; ++value)
                 {
-                    Logger.LogDebug("C[{value}] = {combination}", value, valueCombinations[value]);
+                    Logger.LogDebug("C[{Value}] = {Combination}", value, valueCombinations[value]);
                 }
             }
             return valueCombinations[VALUE_TARGET];

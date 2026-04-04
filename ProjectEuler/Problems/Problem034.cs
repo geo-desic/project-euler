@@ -24,7 +24,7 @@ namespace ProjectEuler.Problems
                 }
                 if (n == digitFactorialSum)
                 {
-                    Logger.LogDebug("{n}", n);
+                    Logger.LogDebug("{N}", n);
                     answer += n;
                 }
             }
@@ -44,7 +44,7 @@ namespace ProjectEuler.Problems
             if (digit == 7) return 5040;
             if (digit == 8) return 40320;
             if (digit == 9) return 362880;
-            throw new System.Exception("invalid digit");
+            throw new System.ArgumentOutOfRangeException(nameof(digit));
         }
     }
 }

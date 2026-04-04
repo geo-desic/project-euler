@@ -14,7 +14,7 @@ namespace ProjectEuler.Problems
                 product = MathHelpers.MultiplyIntegerStrings(product, i.ToString());
             }
 
-            Logger.LogDebug("{product}", product);
+            Logger.LogDebug("{Product}", product);
 
             var answer = 0;
             for (var i = 0; i < product.Length; ++i)

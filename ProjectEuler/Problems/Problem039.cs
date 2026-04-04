@@ -25,7 +25,7 @@ namespace ProjectEuler.Problems
                     {
                         maxSolutions = solutions;
                         answer = triangle.P;
-                        Logger.LogDebug("p = {answer}; solutions = {solutions}", answer, solutions);
+                        Logger.LogDebug("p = {Answer}; solutions = {Solutions}", answer, solutions);
                     }
                 }
             }
@@ -52,7 +52,7 @@ namespace ProjectEuler.Problems
             return result;
         }
 
-        private class PythagoreanTriple
+        private sealed class PythagoreanTriple
         {
             public int A { get; }
             public int B { get; }

@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
                 if (c.Length == totalDigits) break;
                 else if (c.Length >= detailThreshold)
                 {
-                    Logger.LogDebug("Index = {answer}; Length = {length}", answer, c.Length);
+                    Logger.LogDebug("Index = {Answer}; Length = {Length}", answer, c.Length);
                     detailThreshold += detailSize;
                 }
                 a = b;

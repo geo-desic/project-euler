@@ -14,7 +14,7 @@ namespace ProjectEuler.Problems
             {
                 if (i % 3 == 0 || i % 5 == 0)
                 {
-                    Logger.LogDebug("{multiple}", i);
+                    Logger.LogDebug("{Multiple}", i);
                     answer += i;
                 }
             }

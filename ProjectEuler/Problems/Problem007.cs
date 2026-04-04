@@ -20,12 +20,12 @@ namespace ProjectEuler.Problems
             {
                 if (!compositeSieve[i])
                 {
-                    Logger.LogDebug("{i}", i);
+                    Logger.LogDebug("{Index}", i);
                     ++index;
                     if (index >= n) break;
                 }
             }
-            if (index < n) throw new Exception("Invalid upper bound: " + upperBound);
+            if (index < n) throw new InvalidOperationException("Invalid upper bound: " + upperBound);
 
             return i;
         }

@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
                 if (i == SumOfFifthPowers(digits))
                 {
                     answer += i;
-                    Logger.LogDebug("{i}", i);
+                    Logger.LogDebug("{Index}", i);
                 }
             }
             return answer;

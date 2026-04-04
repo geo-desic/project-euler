@@ -40,7 +40,7 @@ namespace ProjectEuler.Problems
                             d = d10 * 10 + d1;
                             if (FractionsEquivalent(n, d, n10, d1) && n < d)
                             {
-                                Logger.LogDebug("{n} / {d} = {n10} / {d1}", n, d, n10, d1);
+                                Logger.LogDebug("{N} / {D} = {N10} / {D1}", n, d, n10, d1);
                                 numeratorProduct *= n10;
                                 denominatorProduct *= d1;
                             }
@@ -51,7 +51,7 @@ namespace ProjectEuler.Problems
                             d = d10 * 10 + d1;
                             if (FractionsEquivalent(n, d, n1, d10) && n < d)
                             {
-                                Logger.LogDebug("{n} / {d} = {n1} / {d10}", n, d, n1, d10);
+                                Logger.LogDebug("{N} / {D} = {N1} / {D10}", n, d, n1, d10);
                                 numeratorProduct *= n1;
                                 denominatorProduct *= d10;
                             }
@@ -64,7 +64,7 @@ namespace ProjectEuler.Problems
             numeratorProduct /= gcd;
             denominatorProduct /= gcd;
             Logger.LogDebug("Product In Lowest Terms:");
-            Logger.LogDebug("{numeratorProduct} / {denominatorProduct}", numeratorProduct, denominatorProduct);
+            Logger.LogDebug("{NumeratorProduct} / {DenominatorProduct}", numeratorProduct, denominatorProduct);
 
             return denominatorProduct;
         }

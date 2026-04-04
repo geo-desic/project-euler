@@ -19,7 +19,7 @@ namespace ProjectEuler.Problems
                     if (product <= answer) break;
                     if (product.IsPalindrome())
                     {
-                        Logger.LogDebug("{product} = {i} * {j}", product, i, j);
+                        Logger.LogDebug("{Product} = {OuterIndex} * {InnerIndex}", product, i, j);
                         answer = product;
                         break;
                     }

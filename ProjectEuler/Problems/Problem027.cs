@@ -42,7 +42,7 @@ namespace ProjectEuler.Problems
                             a = a_current;
                             b = b_inc;
                             max_length = length;
-                            Logger.LogDebug("length = {length}; a = {a}; b = {b}", length, a, b);
+                            Logger.LogDebug("length = {Length}; a = {A}; b = {B}", length, a, b);
                         }
                     }
                 }

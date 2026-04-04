@@ -83,8 +83,7 @@ namespace ProjectEuler
                         }
                     }
                     var digitsRemainingGroup = digitsGroup.Right(2);
-                    if (digitsRemainingGroup == "00") { }
-                    else
+                    if (digitsRemainingGroup != "00")
                     {
                         var onesDigit = digitsRemainingGroup[digitsRemainingGroup.Length - 1] - '0';
                         var tensDigit = 0;

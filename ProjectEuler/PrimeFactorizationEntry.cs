@@ -4,7 +4,7 @@
     /// Represents an entry in a prime factorization.
     /// <example>For example, 2^2 is one entry in the prime factorization of 60.</example>
     /// </summary>
-    public class PrimeFactorizationEntry
+    public sealed class PrimeFactorizationEntry
     {
         public PrimeFactorizationEntry(long prime, int power)
         {
@@ -28,10 +28,7 @@
         /// </summary>
         public bool Equals(PrimeFactorizationEntry other)
         {
-            if (other != null)
-            {
-                if (Prime == other.Prime && Power == other.Power) return true;
-            }
+            if (other != null && Prime == other.Prime && Power == other.Power) return true;
             return false;
         }
     }

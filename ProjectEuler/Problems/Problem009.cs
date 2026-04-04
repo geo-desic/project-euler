@@ -21,13 +21,13 @@ namespace ProjectEuler.Problems
                     if (c * c == a * a + b * b)
                     {
                         Logger.LogDebug("Pythagorean Triplet:");
-                        Logger.LogDebug("a = {a}; b = {b}; c = {c}", a, b, c);
+                        Logger.LogDebug("a = {A}; b = {B}; c = {C}", a, b, c);
                         answer = a * b * c;
                         break;
                     }
                 }
             }
-            if (answer == 0L) throw new Exception("Answer was not found");
+            if (answer == 0L) throw new InvalidOperationException("Answer was not found");
 
             return answer;
         }

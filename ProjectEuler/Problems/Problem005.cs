@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
                         if (item.Power > lcmEntry.Power) lcmEntry.Power = item.Power;
                     }
                 }
-                Logger.LogDebug("{i}: {product}", i, lcmFactorization.ComputeProduct());
+                Logger.LogDebug("{Index}: {Product}", i, lcmFactorization.ComputeProduct());
             }
 
             return lcmFactorization.ComputeProduct();

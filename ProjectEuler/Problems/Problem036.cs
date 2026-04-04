@@ -18,7 +18,7 @@ namespace ProjectEuler.Problems
                 var iAsBinary = Convert.ToString(i, 2);
                 if (i.IsPalindrome() && iAsBinary.IsPalindrome())
                 {
-                    Logger.LogDebug("{i}; {iAsBinary}", i, iAsBinary);
+                    Logger.LogDebug("{Index}; {IndexAsBinary}", i, iAsBinary);
                     answer += i;
                 }
             }

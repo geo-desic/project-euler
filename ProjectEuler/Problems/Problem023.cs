@@ -20,7 +20,7 @@ namespace ProjectEuler.Problems
             }
 
             var done = false;
-            var twoAbundantNumberSums = new Dictionary<int, bool> ();
+            var twoAbundantNumberSums = new Dictionary<int, bool>();
             for (var i = 0; i < abundantNumbers.Count; ++i)
             {
                 for (var j = i; j < abundantNumbers.Count; ++j)
@@ -47,7 +47,7 @@ namespace ProjectEuler.Problems
                 if (!twoAbundantNumberSums.ContainsKey(i))
                 {
                     answer += i;
-                    Logger.LogDebug("{i}; Sum = {answer}", i, answer);
+                    Logger.LogDebug("{Index}; Sum = {Answer}", i, answer);
                 }
             }
 
