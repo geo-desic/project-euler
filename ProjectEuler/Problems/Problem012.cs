@@ -19,7 +19,7 @@ namespace ProjectEuler.Problems
                 var divisors = MathHelpers.DivisorCount(triangularNumber);
                 if (divisors > maxDivisors)
                 {
-                    Logger.LogDebug("Triangular #{i} = {TriangularNumber}; Divisor Count = {DivisorCount}", i, triangularNumber, divisors);
+                    Logger.LogDebug("Triangular #{Index} = {TriangularNumber}; Divisor Count = {DivisorCount}", i, triangularNumber, divisors);
                     maxDivisors = divisors;
                     answer = triangularNumber;
                 }

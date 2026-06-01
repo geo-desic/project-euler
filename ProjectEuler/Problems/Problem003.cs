@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace ProjectEuler.Problems
 {
@@ -13,10 +14,10 @@ namespace ProjectEuler.Problems
             var primeFactorization = MathHelpers.PrimeFactorization(n);
 
             Logger.LogDebug("Prime Factors:");
-            foreach (var item in primeFactorization.Entries)
+            foreach (var prime in primeFactorization.Entries.Select(x => x.Prime))
             {
-                Logger.LogDebug("{PrimeFactor}", item.Prime);
-                if (item.Prime > answer) answer = item.Prime;
+                Logger.LogDebug("{PrimeFactor}", prime);
+                if (prime > answer) answer = prime;
             }
 
             return answer;

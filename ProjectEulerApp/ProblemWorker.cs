@@ -28,6 +28,7 @@ internal sealed class ProblemWorker(ILogger<ProblemWorker> logger, IServiceScope
         stopwatch.Start();
         foreach (var problemType in problemTypes)
         {
+            stoppingToken.ThrowIfCancellationRequested();
             var problem = ActivatorUtilities.CreateInstance(scope.ServiceProvider, problemType) as IProblem;
             problem.Answer();
         }

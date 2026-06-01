@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler.Problems
 {
@@ -16,17 +17,14 @@ namespace ProjectEuler.Problems
             var solutionCounts = new int[MAX_PERIMITER + 1];
             var triangles = GeneratePythagoreanTriples(MAX_PERIMITER / 2 + 1);
             var maxSolutions = 0;
-            foreach (var triangle in triangles)
+            foreach (var p in triangles.Where(x => x.P <= MAX_PERIMITER).Select(x => x.P))
             {
-                if (triangle.P <= MAX_PERIMITER)
+                var solutions = ++solutionCounts[p];
+                if (solutions > maxSolutions)
                 {
-                    var solutions = ++solutionCounts[triangle.P];
-                    if (solutions > maxSolutions)
-                    {
-                        maxSolutions = solutions;
-                        answer = triangle.P;
-                        Logger.LogDebug("p = {Answer}; solutions = {Solutions}", answer, solutions);
-                    }
+                    maxSolutions = solutions;
+                    answer = p;
+                    Logger.LogDebug("p = {Answer}; solutions = {Solutions}", answer, solutions);
                 }
             }
             return answer;
