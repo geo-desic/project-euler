@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace ProjectEuler
@@ -7,7 +8,7 @@ namespace ProjectEuler
     /// Represents the prime factorization for an integer.
     /// <example>For example, 2^2 * 3 * 5 is the prime factorization for the integer 60.</example>
     /// </summary>
-    public sealed class PrimeFactorization
+    public sealed class PrimeFactorization : IEquatable<PrimeFactorization>
     {
         public PrimeFactorization()
         {
@@ -52,7 +53,7 @@ namespace ProjectEuler
         /// Returns the entry of this factorization object containing the prime provided.
         /// <example>For example, if this object is the prime factorization of 60 = 2^2 * 3 * 5, given input 2 it would return the 2^2 entry.</example>
         /// </summary>
-        public PrimeFactorizationEntry Entry(long prime)
+        public PrimeFactorizationEntry? Entry(long prime)
         {
             if (entriesDictionary.TryGetValue(prime, out PrimeFactorizationEntry entry))
             {
@@ -94,7 +95,7 @@ namespace ProjectEuler
         /// <summary>
         /// Returns true if this factorization is equivalent to the other factorization provided, false otherwise.
         /// </summary>
-        public bool Equals(PrimeFactorization other)
+        public bool Equals(PrimeFactorization? other)
         {
             if (other != null)
             {
@@ -109,6 +110,25 @@ namespace ProjectEuler
                 return true;
             }
             return false;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as PrimeFactorization);
+        }
+
+        public override int GetHashCode()
+        {
+            // Entry order is not significant to equality, so the combination must be order-independent.
+            unchecked
+            {
+                var hash = 17;
+                foreach (var entry in entriesList)
+                {
+                    hash += entry.GetHashCode();
+                }
+                return hash;
+            }
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ public class MathHelpersUnitTests
         if (power == 0)
             Assert.That(entry, Is.Null);
         else
-            Assert.That(power, Is.EqualTo(entry.Power));
+            Assert.That(power, Is.EqualTo(entry!.Power));
     }
 
     [Test]

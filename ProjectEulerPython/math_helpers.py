@@ -153,7 +153,7 @@ def prime_factorization(n: int, ordered_primes: [int] = None) -> PrimeFactorizat
   if ordered_primes is None:
     # 2, the only even prime, is treated separately so the for loop below is more efficient (i.e. it can increment by 2 instead of 1)
     while n % 2 == 0:
-      n /= 2
+      n //= 2
       power += 1
 
     if power > 0:

@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  dotnet:
+    name: Build & test (.NET)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore ProjectEuler.slnx
+
+      - name: Build
+        run: dotnet build ProjectEuler.slnx --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test ProjectEuler.slnx --configuration Release --no-build --verbosity normal
+
+  python:
+    name: Smoke test (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run all problems
+        working-directory: ProjectEulerPython
+        run: python project_euler.py

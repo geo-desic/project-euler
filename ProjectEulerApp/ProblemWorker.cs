@@ -5,6 +5,8 @@ using ProjectEuler.Problems;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -29,7 +31,7 @@ internal sealed class ProblemWorker(ILogger<ProblemWorker> logger, IServiceScope
         foreach (var problemType in problemTypes)
         {
             stoppingToken.ThrowIfCancellationRequested();
-            var problem = ActivatorUtilities.CreateInstance(scope.ServiceProvider, problemType) as IProblem;
+            var problem = (IProblem)ActivatorUtilities.CreateInstance(scope.ServiceProvider, problemType);
             problem.Answer();
         }
         stopwatch.Stop();
@@ -42,48 +44,12 @@ internal sealed class ProblemWorker(ILogger<ProblemWorker> logger, IServiceScope
 
     private static List<Type> ProblemTypes()
     {
-        return
-        [
-            typeof(Problem001),
-            typeof(Problem002),
-            typeof(Problem003),
-            typeof(Problem004),
-            typeof(Problem005),
-            typeof(Problem006),
-            typeof(Problem007),
-            typeof(Problem008),
-            typeof(Problem009),
-            typeof(Problem010),
-            typeof(Problem011),
-            typeof(Problem012),
-            typeof(Problem013),
-            typeof(Problem014),
-            typeof(Problem015),
-            typeof(Problem016),
-            typeof(Problem017),
-            typeof(Problem018),
-            typeof(Problem019),
-            typeof(Problem020),
-            typeof(Problem021),
-            typeof(Problem022),
-            typeof(Problem023),
-            typeof(Problem024),
-            typeof(Problem025),
-            typeof(Problem026),
-            typeof(Problem027),
-            typeof(Problem028),
-            typeof(Problem029),
-            typeof(Problem030),
-            typeof(Problem031),
-            typeof(Problem032),
-            typeof(Problem033),
-            typeof(Problem034),
-            typeof(Problem035),
-            typeof(Problem036),
-            typeof(Problem037),
-            typeof(Problem038),
-            typeof(Problem039),
-            typeof(Problem040),
-        ];
+        // Discover every concrete IProblem in the ProjectEuler library, ordered by type name
+        // so Problem001..ProblemNNN run in sequence. Adding a new problem requires no registration here.
+        return typeof(IProblem).Assembly
+            .GetTypes()
+            .Where(type => type.IsClass && !type.IsAbstract && typeof(IProblem).IsAssignableFrom(type))
+            .OrderBy(type => type.Name, StringComparer.Ordinal)
+            .ToList();
     }
 }

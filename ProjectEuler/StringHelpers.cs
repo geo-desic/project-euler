@@ -51,7 +51,7 @@ namespace ProjectEuler
         /// </summary>
         public static string IntegerStringToWords(this string integer, bool includeAnd = true)
         {
-            if (integer.Length == 0) return null;
+            if (integer.Length == 0) return string.Empty;
             var builder = new StringBuilder();
 
             if (integer[0] == '-')

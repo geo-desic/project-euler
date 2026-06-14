@@ -17,7 +17,6 @@ namespace ProjectEuler.Problems
             var width = array.GetLength(1);
 
             var maxProduct = 0L;
-            int[] coordinate = { 0, 0 };
 
             for (var i = 0; i < height; ++i)
             {
@@ -56,33 +55,10 @@ namespace ProjectEuler.Problems
                         }
                     }
 
-                    var increased = false;
-                    if (productDiagonal1 > maxProduct)
-                    {
-                        maxProduct = productDiagonal1;
-                        increased = true;
-                    }
-                    if (productDiagonal2 > maxProduct)
-                    {
-                        maxProduct = productDiagonal2;
-                        increased = true;
-                    }
-                    if (productHorizontal > maxProduct)
-                    {
-                        maxProduct = productHorizontal;
-                        increased = true;
-                    }
-                    if (productVertical > maxProduct)
-                    {
-                        maxProduct = productVertical;
-                        increased = true;
-                    }
-
-                    if (increased)
-                    {
-                        coordinate[0] = i;
-                        coordinate[1] = j;
-                    }
+                    if (productDiagonal1 > maxProduct) maxProduct = productDiagonal1;
+                    if (productDiagonal2 > maxProduct) maxProduct = productDiagonal2;
+                    if (productHorizontal > maxProduct) maxProduct = productHorizontal;
+                    if (productVertical > maxProduct) maxProduct = productVertical;
                 }
             }
 

@@ -168,7 +168,7 @@ namespace ProjectEuler
                 var incremented = false;
                 foreach (var item in divisorFactorization.Entries)
                 {
-                    if (item.Power < factorization.Entry(item.Prime).Power)
+                    if (item.Power < factorization.Entry(item.Prime)!.Power)
                     {
                         product *= item.Prime;
                         ++item.Power;

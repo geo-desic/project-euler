@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
 
         object IProblem.Answer()
         {
-            return Answer();
+            return Answer()!;
         }
     }
 }

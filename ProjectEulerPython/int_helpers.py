@@ -51,7 +51,7 @@ def to_digits(n: int) -> [int]:
   result = []
   if n < 0:
     n = -n
-  elif value == 0:
+  elif n == 0:
     result.append(0)
   while n > 0:
     result.append(n % 10)
