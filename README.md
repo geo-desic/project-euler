@@ -4,7 +4,7 @@ This is a simple project that includes solutions for the first 40 problems on [P
 ## Installation
 Included is a Visual Studio (2026) [solution](ProjectEuler.slnx) containing 4 projects:
 
-- [ProjectEulerPython](ProjectEulerPython/ProjectEulerPython.pyproj) Python (3.7) console application and code
+- [ProjectEulerPython](ProjectEulerPython/ProjectEulerPython.pyproj) Python (3.14) console application and code
 - [ProjectEuler](ProjectEuler/ProjectEuler.csproj) Library containing the C# (Standard 2.0) code
 - [ProjectEulerApp](ProjectEulerApp/ProjectEulerApp.csproj) C# (Net 10.0) console application wrapper for the library above
     - Can lower Logging:LogLevel:Default to Debug in [appsettings.json](ProjectEulerApp/appsettings.json) for more detailed logging

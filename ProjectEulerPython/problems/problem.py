@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class Problem(ABC):
   """Project Euler problem (https://projecteuler.net)"""
 
-  def __init__(self, console_output: bool = True, detailed_output: bool = True):
+  def __init__(self, console_output: bool = True, detailed_output: bool = False):
     self._console_output = console_output
     self._detailed_output = detailed_output
 
